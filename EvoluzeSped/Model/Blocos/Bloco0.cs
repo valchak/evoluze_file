@@ -13,10 +13,10 @@ namespace EvoluzeSped.Model.Blocos
         {
             Registro0000 = new Registro_0000();
             Registro0001 = new Registro_0001();
-            //Registro0002 = new Registro_0002();
+            Registro0002 = new Registro_0002();
             Registro0005 = new Registro_0005();
-            //Registro0015 = new Registro_0015();
-            Registro0100 = new Registro_0100();
+            Registro0015 = new List<Registro_0015>();
+            Registro0100List = new List<Registro_0100>();
             Registro0150List = new List<Registro_0150>();
             //Registro0175 = new Registro_0175();
             Registro0190 = new Registro_0190();
@@ -36,10 +36,10 @@ namespace EvoluzeSped.Model.Blocos
         }
         public Registro_0000 Registro0000 { get; set; }
         public Registro_0001 Registro0001 { get; set; }
-        //public Registro_0002 Registro0002 { get; set; }
+        public Registro_0002 Registro0002 { get; set; }
         public Registro_0005 Registro0005 { get; set; }
-        //public Registro_0015 Registro0015 { get; set; }
-        public Registro_0100 Registro0100 { get; set; }
+        public List<Registro_0015> Registro0015 { get; set; }
+        public List<Registro_0100> Registro0100List { get; set; }
         public List<Registro_0150> Registro0150List { get; set; }
         //public Registro_0175 Registro0175 { get; set; }
         public Registro_0190 Registro0190 { get; set; }

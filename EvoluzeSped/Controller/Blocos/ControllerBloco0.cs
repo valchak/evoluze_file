@@ -153,6 +153,54 @@ namespace EvoluzeSped.Controller.Blocos
         }
 
 
+        public Registro_0002 GetRegistro0002(string linha)
+        {
+            string[] array = linha.Split('|');
+
+            Registro_0002 registro = new Registro_0002();
+
+            registro.N01_REG = array[1];
+            registro.N02_CLAS_ESTAB_IND = array[2];
+
+            return registro;
+
+        }
+        public XLWorkbook GetRegistro0002Excel(XLWorkbook workBook, Registro_0002 registro)
+        {
+
+            var linha = 1;
+
+            var ws = workBook.Worksheets.Add(registro.N01_REG);
+
+            Util util = new Util();
+            IDictionary<int, string> listaProriedades = util.PropriedadeRegistro(registro);
+            IDictionary<int, string> listaTabelaExcel = util.TabelExel();
+            string tmp = "A1:" + listaTabelaExcel[listaProriedades.Count] + linha;
+            var range = ws.Range(tmp);
+
+            // Adiciona os cabeçalos com os nomes das colunas da classe
+            for (int i = 1; i <= listaProriedades.Count; ++i)
+            {
+                ws.Cell(listaTabelaExcel[i] + linha).Value = listaProriedades[i];
+            }
+            // adicionando os valores das linhas 
+            ++linha;
+            var coluna = 1;
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N01_REG.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N02_CLAS_ESTAB_IND.ToString()); ;
+
+            range = ws.Range("A1:" + listaTabelaExcel[listaProriedades.Count] + linha);
+            range.CreateTable();
+
+            ws.Columns("1-" + listaProriedades.Count).AdjustToContents();
+            ws.Columns("1-" + listaProriedades.Count).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
+
+
+            return workBook;
+
+        }
+
+
         public Registro_0005 GetRegistro0005(string linha)
         {
             string[] array = linha.Split('|');
@@ -171,6 +219,58 @@ namespace EvoluzeSped.Controller.Blocos
             registro.N10_EMAIL = array[10];
 
             return registro;
+
+        }
+
+        public XLWorkbook GetRegistro0005Excel(XLWorkbook workBook, Registro_0005 registro)
+        {
+
+            var linha = 1;
+
+            var ws = workBook.Worksheets.Add(registro.N01_REG);
+
+            Util util = new Util();
+            IDictionary<int, string> listaProriedades = util.PropriedadeRegistro(registro);
+            IDictionary<int, string> listaTabelaExcel = util.TabelExel();
+            string tmp = "A1:" + listaTabelaExcel[listaProriedades.Count] + linha;
+            var range = ws.Range(tmp);
+
+            // Adiciona os cabeçalos com os nomes das colunas da classe
+            for (int i = 1; i <= listaProriedades.Count; ++i)
+            {
+                ws.Cell(listaTabelaExcel[i] + linha).Value = listaProriedades[i];
+            }
+            // adicionando os valores das linhas 
+            ++linha;
+            var coluna = 1;
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N01_REG.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N02_FANTASIA.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N03_CEP.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N04_END.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N05_NUM.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N06_COMPL.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N07_BAIRRO.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N08_FONE.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N09_FAX.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N10_EMAIL.ToString());
+
+            // corrige linha para range
+            //linha--;
+
+
+
+            //ws.Range("B2:F" + linha.ToString()).SetDataType(XLDataType.Text);
+            // ws.Range(listaTabelaExcel[listaProriedades.Count] + "2:F" + linha.ToString()).Style.NumberFormat.Format = "#,#.#0";
+            range = ws.Range("A1:" + listaTabelaExcel[listaProriedades.Count] + linha);
+            range.CreateTable();
+            //range = ws.Range("A" + linha + ":" + listaTabelaExcel[listaProriedades.Count] + linha.ToString());
+            //range.CreateTable();
+
+            ws.Columns("1-" + listaProriedades.Count).AdjustToContents();
+            ws.Columns("1-" + listaProriedades.Count).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
+
+
+            return workBook;
 
         }
 
@@ -196,6 +296,68 @@ namespace EvoluzeSped.Controller.Blocos
             registro.N14_COD_MUN = array[14];
 
             return registro;
+
+        }
+        public XLWorkbook GetRegistro0100Excel(XLWorkbook workBook, List<Registro_0100> lista)
+        {
+
+            var linha = 1;
+
+            var ws = workBook.Worksheets.Add(lista.First().N01_REG);
+
+            Util util = new Util();
+            IDictionary<int, string> listaProriedades = util.PropriedadeRegistro(lista.First());
+            IDictionary<int, string> listaTabelaExcel = util.TabelExel();
+            string tmp = "A1:" + listaTabelaExcel[listaProriedades.Count] + linha;
+            var range = ws.Range(tmp);
+
+            // Adiciona os cabeçalos com os nomes das colunas da classe
+            for (int i = 1; i <= listaProriedades.Count; ++i)
+            {
+                ws.Cell(listaTabelaExcel[i] + linha).Value = listaProriedades[i];
+            }
+            // adicionando os valores das linhas 
+            // Adiciona os cabeçalos com os nomes das colunas da classe
+            foreach (var registro in lista)
+            {
+                ++linha;
+                var coluna = 1;
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N01_REG.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N02_NOME.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N03_CPF.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N04_CRC.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N05_CNPJ.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N06_CEP.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N07_END.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N08_NUM.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N09_COMPL.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N10_BAIRRO.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N11_FONE.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N12_FAX.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N13_EMAIL.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N14_COD_MUN.ToString());
+
+            }
+
+
+
+            // corrige linha para range
+            //linha--;
+
+
+
+            //ws.Range("B2:F" + linha.ToString()).SetDataType(XLDataType.Text);
+            // ws.Range(listaTabelaExcel[listaProriedades.Count] + "2:F" + linha.ToString()).Style.NumberFormat.Format = "#,#.#0";
+            range = ws.Range("A1:" + listaTabelaExcel[listaProriedades.Count] + linha);
+            range.CreateTable();
+            //range = ws.Range("A" + linha + ":" + listaTabelaExcel[listaProriedades.Count] + linha.ToString());
+            //range.CreateTable();
+
+            ws.Columns("1-" + listaProriedades.Count).AdjustToContents();
+            ws.Columns("1-" + listaProriedades.Count).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
+
+
+            return workBook;
 
         }
 

@@ -395,6 +395,60 @@ namespace EvoluzeSped.Model.Registros
             }
         }
 
+        //  CLASSIFICAÇÃO DO ESTABELECIMENTO INDUSTRIAL OU EQUIPARADO A 
+        public class Registro_0002
+        {
+            private string F_REG = "0002";
+
+            public string N01_REG
+            {
+                get { return F_REG; }
+                set { F_REG = value.ToUpper(); }
+            }
+            private string F_CLAS_ESTAB_IND = "";
+            /// <summary>
+            /// Informar a classificação do estabelecimento conforme tabela 4.5.5
+            /// </summary>
+            public string N02_CLAS_ESTAB_IND
+            {
+                get { return F_CLAS_ESTAB_IND; }
+                set { F_CLAS_ESTAB_IND = value.ToUpper(); }
+            }
+
+            public string GetRegistro_0002(bool Validate)
+            {
+                if (Validate)
+                {
+                    /* validacao para o tamanho do campo REG */
+                    if (F_REG.Length > 4)
+                    {
+                        return "Erro -> Tamanho do campo de REG incorreto(a)";
+                    }
+                    /* validacao para a obrigatoriedade do campo REG */
+                    if (F_REG.Trim().Trim().Equals(""))
+                    {
+                        return "Erro -> Campo Obrigatório REG não informado(a)";
+                    }
+                    /* validacao para o tamanho do campo IND_MOV */
+                    if (F_CLAS_ESTAB_IND.Length > 1)
+                    {
+                        return "Erro -> Tamanho do campo de IND_MOV incorreto(a)";
+                    }
+                    /* validacao para a obrigatoriedade do campo IND_MOV */
+                    if (F_CLAS_ESTAB_IND.Trim().Trim().Equals(""))
+                    {
+                        return "Erro -> Campo Obrigatório IND_MOV não informado(a)";
+                    }
+                    /* Validacao para os dados informados a IND_MOV */
+                    if (!(F_CLAS_ESTAB_IND.Equals("0")))
+                    {
+                        return "Erro -> O campo IND_MOV possui valores pré-definidos";
+                    }
+                }
+                return String.Format("|{0}|{1}|", F_REG, F_CLAS_ESTAB_IND);
+            }
+        }
+
         /// <summary>
         /// DADOS COMPLEMENTARES DA ENTIDADE
         /// </summary>
@@ -581,6 +635,80 @@ namespace EvoluzeSped.Model.Registros
                     }
                 }
                 return String.Format("|{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|", F_REG, F_FANTASIA, F_CEP, F_END, F_NUM, F_COMPL, F_BAIRRO, F_FONE, F_FAX, F_EMAIL);
+            }
+        }
+
+        /// <summary>
+        ///  DADOS DO CONTRIBUINTE SUBSTITUTO OU RESPONSÁVEL PELO ICMS DESTINO
+        /// </summary>
+        public class Registro_0015
+        {
+            private string F_REG = "0015";
+            /// <summary>
+            /// Texto fixo contendo “0015”
+            /// </summary>
+            public string N01_REG
+            {
+                get { return F_REG; }
+                set { F_REG = value.ToUpper(); }
+            }
+
+            private string F_UF_ST = "";
+            /// <summary>
+            /// Sigla da unidade da federação do contribuinte substituído ou unidade de
+            /// federação do consumidor final não contribuinte - ICMS Destino EC 87/15”
+            /// </summary>
+            public string N02_UF_ST
+            {
+                get { return F_UF_ST; }
+                set { F_UF_ST = value.ToUpper(); }
+            }
+
+            private string F_IE_ST = "";
+            /// <summary>
+            /// Inscrição Estadual do contribuinte substituto na unidade da federação do
+            /// contribuinte substituído ou unidade de federação do consumidor final não
+            /// contribuinte - ICMS Destino EC 87/15
+            /// </summary>
+            public string N03_IE_ST
+            {
+                get { return F_IE_ST; }
+                set { F_IE_ST = value.ToUpper(); }
+            }
+
+            
+            public string GetRegistro(bool Validate)
+            {
+                if (Validate)
+                {
+                    /* validacao para o tamanho do campo REG */
+                    if (F_REG.Length > 4)
+                    {
+                        return "Erro -> Tamanho do campo de REG incorreto(a)";
+                    }
+                    /* validacao para a obrigatoriedade do campo REG */
+                    if (F_REG.Trim().Trim().Equals(""))
+                    {
+                        return "Erro -> Campo Obrigatório REG não informado(a)";
+                    }
+                    /* validacao para o tamanho do campo FANTASIA */
+                    if (F_UF_ST.Length > 60)
+                    {
+                        return "Erro -> Tamanho do campo de FANTASIA incorreto(a)";
+                    }
+                    /* validacao para a obrigatoriedade do campo FANTASIA */
+                    if (F_UF_ST.Trim().Trim().Equals(""))
+                    {
+                        return "Erro -> Campo Obrigatório FANTASIA não informado(a)";
+                    }
+                    /* validacao para o tamanho do campo CEP */
+                    if (F_IE_ST.Length > 8)
+                    {
+                        return "Erro -> Tamanho do campo de CEP incorreto(a)";
+                    }
+                   
+                }
+                return String.Format("|{0}|{1}|{2}|", F_REG, F_UF_ST, F_IE_ST);
             }
         }
 

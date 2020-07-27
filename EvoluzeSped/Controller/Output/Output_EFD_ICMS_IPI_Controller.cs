@@ -96,7 +96,12 @@ namespace EvoluzeSped.Controller.Output
         {
             controller.Bloco0.GetRegistro0000Excel(wb, bloco.Registro0000);
             controller.Bloco0.GetRegistro0001Excel(wb, bloco.Registro0001);
-            controller.Bloco0.GetRegistro0150Excel(wb, bloco.Registro0150List);
+            controller.Bloco0.GetRegistro0002Excel(wb, bloco.Registro0002);
+            controller.Bloco0.GetRegistro0005Excel(wb, bloco.Registro0005);
+            if(bloco.Registro0100List.Count > 0)
+                controller.Bloco0.GetRegistro0100Excel(wb, bloco.Registro0100List);
+            if (bloco.Registro0150List.Count > 0)
+                controller.Bloco0.GetRegistro0150Excel(wb, bloco.Registro0150List);
 
             switch ("")
             {

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ClosedXML.Excel;
+using EvoluzeSped.Model.Arquivos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,24 +19,83 @@ namespace EvoluzeSped.Controller.Blocos
 
             registro.N01_REG = array[1];
             registro.N02_COD_VER = array[2];
-            //registro.N03_COD_FIN = array[3];
-            //registro.N04_DT_INI = array[4];
-            //registro.N05_DT_FIN = array[5];
-            //registro.N06_NOME = array[6];
-            //registro.N07_CNPJ = array[7];
-            //registro.N08_CPF = array[8];
-            //registro.N09_UF = array[9];
-            //registro.N10_IE = array[10];
-            //registro.N11_COD_MUN = array[11];
-            //registro.N12_IM = array[12];
-            //registro.N13_SUFRAMA = array[13];
-            //registro.N14_IND_PERFIL = array[14];
-            //registro.N15_IND_ATIV = array[15];
+            registro.N03_COD_FIN = array[3];
+            registro.N04_DT_INI = array[4];
+            registro.N05_DT_FIN = array[5];
+            registro.N06_NOME = array[6];
+            registro.N07_CNPJ = array[7];
+            registro.N08_CPF = array[8];
+            registro.N09_UF = array[9];
+            registro.N10_IE = array[10];
+            registro.N11_COD_MUN = array[11];
+            registro.N12_IM = array[12];
+            registro.N13_SUFRAMA = array[13];
+            registro.N14_IND_PERFIL = array[14];
+            registro.N15_IND_ATIV = array[15];
 
             return registro;
 
         }
-        /*
+
+        public XLWorkbook GetRegistro0000Excel(XLWorkbook workBook, Registro_0000 registro)
+        {
+
+            var linha = 1;
+
+            var ws = workBook.Worksheets.Add(registro.N01_REG);
+
+            Util util = new Util();
+            IDictionary<int, string> listaProriedades = util.PropriedadeRegistro(registro);
+            IDictionary<int, string> listaTabelaExcel = util.TabelExel();
+            string tmp = "A1:" + listaTabelaExcel[listaProriedades.Count] + linha;
+            var range = ws.Range(tmp);
+
+            // Adiciona os cabeçalos com os nomes das colunas da classe
+            for (int i = 1; i <= listaProriedades.Count; ++i)
+            {
+                ws.Cell(listaTabelaExcel[i] + linha).Value = listaProriedades[i];
+            }
+            // adicionando os valores das linhas 
+            ++linha;
+            var coluna = 1;
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N01_REG.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N02_COD_VER.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N03_COD_FIN.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N04_DT_INI.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N05_DT_FIN.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N06_NOME.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N07_CNPJ.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N08_CPF.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N09_UF.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N10_IE.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N11_COD_MUN.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N12_IM.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N13_SUFRAMA.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N14_IND_PERFIL.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N15_IND_ATIV.ToString());
+
+            // corrige linha para range
+            //linha--;
+
+
+
+            //ws.Range("B2:F" + linha.ToString()).SetDataType(XLDataType.Text);
+            // ws.Range(listaTabelaExcel[listaProriedades.Count] + "2:F" + linha.ToString()).Style.NumberFormat.Format = "#,#.#0";
+            range = ws.Range("A1:" + listaTabelaExcel[listaProriedades.Count] + linha);
+            range.CreateTable();
+            //range = ws.Range("A" + linha + ":" + listaTabelaExcel[listaProriedades.Count] + linha.ToString());
+            //range.CreateTable();
+
+            ws.Columns("1-" + listaProriedades.Count).AdjustToContents();
+            ws.Columns("1-" + listaProriedades.Count).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
+
+
+            return workBook;
+
+        }
+
+
+
         public Registro_0001 GetRegistro0001(string linha)
         {
             string[] array = linha.Split('|');
@@ -47,6 +108,50 @@ namespace EvoluzeSped.Controller.Blocos
             return registro;
 
         }
+        public XLWorkbook GetRegistro0001Excel(XLWorkbook workBook, Registro_0001 registro)
+        {
+
+            var linha = 1;
+
+            var ws = workBook.Worksheets.Add(registro.N01_REG);
+
+            Util util = new Util();
+            IDictionary<int, string> listaProriedades = util.PropriedadeRegistro(registro);
+            IDictionary<int, string> listaTabelaExcel = util.TabelExel();
+            string tmp = "A1:" + listaTabelaExcel[listaProriedades.Count] + linha;
+            var range = ws.Range(tmp);
+
+            // Adiciona os cabeçalos com os nomes das colunas da classe
+            for (int i = 1; i <= listaProriedades.Count; ++i)
+            {
+                ws.Cell(listaTabelaExcel[i] + linha).Value = listaProriedades[i];
+            }
+            // adicionando os valores das linhas 
+            ++linha;
+            var coluna = 1;
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N01_REG.ToString());
+            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N02_IND_MOV.ToString());;
+
+            // corrige linha para range
+            //linha--;
+
+
+
+            //ws.Range("B2:F" + linha.ToString()).SetDataType(XLDataType.Text);
+            // ws.Range(listaTabelaExcel[listaProriedades.Count] + "2:F" + linha.ToString()).Style.NumberFormat.Format = "#,#.#0";
+            range = ws.Range("A1:" + listaTabelaExcel[listaProriedades.Count] + linha);
+            range.CreateTable();
+            //range = ws.Range("A" + linha + ":" + listaTabelaExcel[listaProriedades.Count] + linha.ToString());
+            //range.CreateTable();
+
+            ws.Columns("1-" + listaProriedades.Count).AdjustToContents();
+            ws.Columns("1-" + listaProriedades.Count).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
+
+
+            return workBook;
+
+        }
+
 
         public Registro_0005 GetRegistro0005(string linha)
         {
@@ -115,6 +220,68 @@ namespace EvoluzeSped.Controller.Blocos
             registro.N13_BAIRRO = array[13];
 
             return registro;
+        }
+
+        public XLWorkbook GetRegistro0150Excel(XLWorkbook workBook, List<Registro_0150> lista)
+        {
+
+            var linha = 1;
+
+            var ws = workBook.Worksheets.Add(lista.First().N01_REG);
+
+            Util util = new Util();
+            IDictionary<int, string> listaProriedades = util.PropriedadeRegistro(lista.First());
+            IDictionary<int, string> listaTabelaExcel = util.TabelExel();
+            string tmp = "A1:" + listaTabelaExcel[listaProriedades.Count] + linha;
+            var range = ws.Range(tmp);
+
+            // Adiciona os cabeçalos com os nomes das colunas da classe
+            for (int i = 1; i <= listaProriedades.Count; ++i)
+            {
+                ws.Cell(listaTabelaExcel[i] + linha).Value = listaProriedades[i];
+            }
+            // adicionando os valores das linhas 
+            // Adiciona os cabeçalos com os nomes das colunas da classe
+            foreach(var registro in lista)
+            {
+                ++linha;
+                var coluna = 1;
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N01_REG.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N02_COD_PART.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N03_NOME.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N04_COD_PAIS.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N05_CNPJ.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N06_CPF.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N07_IE.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N08_COD_MUN.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N09_SUFRAMA.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N10_END.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N11_NUM.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N12_COMPL.ToString());
+                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(registro.N13_BAIRRO.ToString());
+
+            }
+            
+            
+
+            // corrige linha para range
+            //linha--;
+
+
+
+            //ws.Range("B2:F" + linha.ToString()).SetDataType(XLDataType.Text);
+            // ws.Range(listaTabelaExcel[listaProriedades.Count] + "2:F" + linha.ToString()).Style.NumberFormat.Format = "#,#.#0";
+            range = ws.Range("A1:" + listaTabelaExcel[listaProriedades.Count] + linha);
+            range.CreateTable();
+            //range = ws.Range("A" + linha + ":" + listaTabelaExcel[listaProriedades.Count] + linha.ToString());
+            //range.CreateTable();
+
+            ws.Columns("1-" + listaProriedades.Count).AdjustToContents();
+            ws.Columns("1-" + listaProriedades.Count).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
+
+
+            return workBook;
+
         }
 
         public Registro_0190 GetRegistro0190(string linha)
@@ -272,6 +439,6 @@ namespace EvoluzeSped.Controller.Blocos
             registro.N02_QTD_LIN_0 = array[2];
             return registro;
         }
-        */
+        
     }
 }

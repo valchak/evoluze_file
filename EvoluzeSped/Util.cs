@@ -11,7 +11,7 @@ namespace EvoluzeSped
     class Util
     {
 
-        public Dictionary<int, string> PropriedadeRegistro0000(Object registro)
+        public Dictionary<int, string> PropriedadeRegistro(Object registro)
         {
             Dictionary<int, string> propriedades = new Dictionary<int, string>();
             Type tipo = registro.GetType();

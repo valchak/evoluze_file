@@ -1,5 +1,8 @@
 ﻿using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Wordprocessing;
+using EvoluzeSped.Controller.Aquivos;
 using EvoluzeSped.Model.Arquivos;
+using EvoluzeSped.Model.Blocos;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,9 +14,14 @@ namespace EvoluzeSped.Controller.Output
 {
     class Output_EFD_ICMS_IPI_Controller
     {
+        Sped_EFD_ICMS_IPI_Controller controller;
+        //Sped_EFD_ICMS_IPI sped;
+        XLWorkbook wb;
         public Output_EFD_ICMS_IPI_Controller()
         {
-
+            //sped = new Sped_EFD_ICMS_IPI();
+            controller = new Sped_EFD_ICMS_IPI_Controller();
+            wb = new XLWorkbook();
         }
 
 
@@ -24,10 +32,7 @@ namespace EvoluzeSped.Controller.Output
         {
             string retorno = "Arquivos salvo com sucesso:\n" + arquivo;
 
-            
-            var wb = new XLWorkbook();
-
-            GeraPlainhaRegistro0000(wb, sped);
+            ProcessaBlocosParaExcel(sped);
 
             try
             {
@@ -44,55 +49,17 @@ namespace EvoluzeSped.Controller.Output
 
         }
 
-        public XLWorkbook GeraPlainhaRegistro0000(XLWorkbook workBook, Sped_EFD_ICMS_IPI sped) {
-            
-            var ws = workBook.Worksheets.Add(sped.Bloco0.Registro0000.N01_REG);
-            Util util = new Util();
-            IDictionary<int, string> listaProriedades = util.PropriedadeRegistro0000(sped.Bloco0.Registro0000);
-            IDictionary<int, string> listaTabelaExcel = util.TabelExel();
-            string tmp = "A" + linha + ":" + listaTabelaExcel[listaProriedades.Count] + linha;
-            var range = ws.Range(tmp);
-
-            var linha = 1;
-            for (int i = 1; i <= listaProriedades.Count; ++i )
-            {
-                ws.Cell(listaTabelaExcel[i] + linha).Value = listaProriedades[i];
-            }
-            linha++;
-            ws.Cell(listaTabelaExcel[1] + linha).SetDataType(XLDataType.Text);
-            ws.Cell(listaTabelaExcel[1] + linha).Value = " "+sped.Bloco0.Registro0000.N01_REG;
-            ws.Cell(listaTabelaExcel[2] + linha).SetDataType(XLDataType.Text);
-            
-
-            // ws.Range(listaTabelaExcel[listaProriedades.Count] + "2:F" + linha.ToString()).Style.NumberFormat.Format = "#,#.#0";
-            ws.Cell(listaTabelaExcel[2] + linha).Value = sped.Bloco0.Registro0000.N02_COD_VER.ToString();
-           
-
-            
-
-            
-
-           
-
-            //range = ws.Range("A1:C" + linha.ToString());
-            range.CreateTable();
-
-            ws.Columns("2-9").AdjustToContents();
-
-            return workBook;
-
-        }
+        
 
 
-        private void validaRegistro(string linha)
+        private void ProcessaBlocosParaExcel(Sped_EFD_ICMS_IPI sped)
         {
-            string[] array = linha.Split('|');
-            string bloco = array[1].Substring(0, 1);
+            processaBloco0(sped.Bloco0);
 
-            switch (bloco)
+            switch (" 0 " )
             {
                 case "0":
-                    processaBloco0(array[1], linha);
+                    
                     break;
                 case "1":
                     //                   processaBloco1(array[1], linha);
@@ -125,12 +92,16 @@ namespace EvoluzeSped.Controller.Output
 
         }
 
-        private void processaBloco0(string registro, string linha)
+        private void processaBloco0(Bloco0 bloco)
         {
-            switch (registro)
+            controller.Bloco0.GetRegistro0000Excel(wb, bloco.Registro0000);
+            controller.Bloco0.GetRegistro0001Excel(wb, bloco.Registro0001);
+            controller.Bloco0.GetRegistro0150Excel(wb, bloco.Registro0150List);
+
+            switch ("")
             {
                 case "0000":
-                    //sped.Bloco0.Registro0000 = controller.Bloco0.GetRegistro0000(linha);
+                    
                     break;
                 case "0001":
                     //                    sped.Bloco0.Registro0001 = controller.Bloco0.GetRegistro0001(linha);

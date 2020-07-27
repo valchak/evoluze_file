@@ -47,10 +47,10 @@ namespace EvoluzeSped.Controller.Input
                     processaBloco0(array[1], linha);
                     break;
                 case "1":
- //                   processaBloco1(array[1], linha);
+//                    processaBloco1(array[1], linha);
                     break;
                 case "9":
- //                   processaBloco9(array[1], linha);
+//                    processaBloco9(array[1], linha);
                     break;
                 case "B":
 //                    processaBlocoB(array[1], linha);
@@ -85,7 +85,7 @@ namespace EvoluzeSped.Controller.Input
                     sped.Bloco0.Registro0000 = controller.Bloco0.GetRegistro0000(linha);
                     break;
                 case "0001":
-//                    sped.Bloco0.Registro0001 = controller.Bloco0.GetRegistro0001(linha);
+                    sped.Bloco0.Registro0001 = controller.Bloco0.GetRegistro0001(linha);
                     break;
                 case "0005":
 //                    sped.Bloco0.Registro0005 = controller.Bloco0.GetRegistro0005(linha);
@@ -94,7 +94,7 @@ namespace EvoluzeSped.Controller.Input
 //                    sped.Bloco0.Registro0100 = controller.Bloco0.GetRegistro0100(linha);
                     break;
                 case "0150":
-//                    sped.Bloco0.Registro0150.Add(controller.Bloco0.GetRegistro0150(linha));
+                    sped.Bloco0.Registro0150List.Add(controller.Bloco0.GetRegistro0150(linha));
                     break;
                 case "0190":
 //                    sped.Bloco0.Registro0190.Add(controller.Bloco0.GetRegistro0190(linha));

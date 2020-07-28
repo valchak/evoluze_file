@@ -12,8 +12,10 @@ namespace EvoluzeSped.Model.Arquivos
         public Sped_EFD_ICMS_IPI()
         {
             Bloco0 = new Bloco0();
+            Bloco1 = new Bloco1();
         }
         public Bloco0 Bloco0 { get; set; }
+        public Bloco1 Bloco1 { get; set; }
 
     }
 }

@@ -1,7 +1,9 @@
-﻿using DocumentFormat.OpenXml.Math;
+﻿using DocumentFormat.OpenXml.Drawing.Charts;
+using DocumentFormat.OpenXml.Math;
 using EvoluzeSped.Model.Arquivos;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using static EvoluzeSped.Model.Registros.RegistroBloco0;
@@ -11,19 +13,53 @@ namespace EvoluzeSped
     class Util
     {
 
-        public Dictionary<int, string> PropriedadeRegistro(Object registro)
+        public Dictionary<int, string> PropriedadeRegistro(object registro)
         {
             Dictionary<int, string> propriedades = new Dictionary<int, string>();
             Type tipo = registro.GetType();
 
             int numeroPropriedade = 0;
 
-            PropertyInfo[] properties = tipo.GetProperties();
-            foreach (var propertyInfo in properties)
+            if (!tipo.GetProperties().First().GetValue(registro).Equals(""))
             {
-                propriedades.Add(++numeroPropriedade, propertyInfo.Name.Substring(4));
+                PropertyInfo[] properties = tipo.GetProperties();
+                foreach (var propertyInfo in properties)
+                {
+                    propriedades.Add(++numeroPropriedade, propertyInfo.Name.Substring(4));
+                }
+                return propriedades;
             }
-            return propriedades;
+            else
+            {
+                return null;
+            }
+        }
+
+        public DateTime StringToData(string dataString)
+        {
+            int ano = int.Parse(dataString.Substring(4, 4));
+            int mes = int.Parse(dataString.Substring(2, 2));
+            int dia = int.Parse(dataString.Substring(0, 2));
+            string novaData = dia + "/" + mes + "/" + ano;
+
+            DateTime data = new DateTime(ano, mes, dia);
+
+
+            DateTime minhadata = Convert.ToDateTime(novaData);
+            Console.WriteLine("Mes: " + minhadata.Month.ToString());
+            Console.WriteLine("Ano: " + minhadata.Year.ToString());
+
+            return data;
+        }
+
+        public string DeteToStringExcel(DateTime objData)
+        {
+            int ano = objData.Year;
+            int mes = objData.Year;
+            int dia = objData.Year;
+            string novaData = dia + "/" + mes + "/" + ano;
+
+            return novaData;
         }
 
         public Dictionary<int, string> TabelExel()

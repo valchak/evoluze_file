@@ -10,11 +10,11 @@ namespace EvoluzeSped.Model.Registros
     {
         public class Registro_0000
         {
-            private string REG = "0000";
+            private string REG = "";
             public string N01_REG
             {
                 get { return REG; }
-                set { REG = value.ToUpper(); }
+                set { REG = value; }
             }
 
             // Código da versão do leiaute conforme a tabela indicada no Ato COTEPE.
@@ -22,7 +22,7 @@ namespace EvoluzeSped.Model.Registros
             public string N02_COD_VER
             {
                 get { return COD_VER; }
-                set { COD_VER = value.ToUpper(); }
+                set { COD_VER = value; }
             }
 
             private string COD_FIN = "";
@@ -32,7 +32,7 @@ namespace EvoluzeSped.Model.Registros
             public string N03_COD_FIN
             {
                 get { return COD_FIN; }
-                set { COD_FIN = value.ToUpper(); }
+                set { COD_FIN = value; }
             }
 
             private string DT_INI = "";
@@ -42,7 +42,7 @@ namespace EvoluzeSped.Model.Registros
             public string N04_DT_INI
             {
                 get { return DT_INI; }
-                set { DT_INI = value.ToUpper(); }
+                set { DT_INI = value; }
             }
 
             private string DT_FIN = "";
@@ -52,7 +52,7 @@ namespace EvoluzeSped.Model.Registros
             public string N05_DT_FIN
             {
                 get { return DT_FIN; }
-                set { DT_FIN = value.ToUpper(); }
+                set { DT_FIN = value; }
             }
 
             private string NOME = "";
@@ -62,7 +62,7 @@ namespace EvoluzeSped.Model.Registros
             public string N06_NOME
             {
                 get { return NOME; }
-                set { NOME = value.ToUpper(); }
+                set { NOME = value; }
             }
 
             private string CNPJ = "";
@@ -72,7 +72,7 @@ namespace EvoluzeSped.Model.Registros
             public string N07_CNPJ
             {
                 get { return CNPJ; }
-                set { CNPJ = value.ToUpper(); }
+                set { CNPJ = value; }
             }
 
             private string CPF = "";
@@ -82,7 +82,7 @@ namespace EvoluzeSped.Model.Registros
             public string N08_CPF
             {
                 get { return CPF; }
-                set { CPF = value.ToUpper(); }
+                set { CPF = value; }
             }
 
             private string UF = "";
@@ -92,7 +92,7 @@ namespace EvoluzeSped.Model.Registros
             public string N09_UF
             {
                 get { return UF; }
-                set { UF = value.ToUpper(); }
+                set { UF = value; }
             }
 
             private string IE = "";
@@ -102,7 +102,7 @@ namespace EvoluzeSped.Model.Registros
             public string N10_IE
             {
                 get { return IE; }
-                set { IE = value.ToUpper(); }
+                set { IE = value; }
             }
 
             private string COD_MUN = "";
@@ -112,7 +112,7 @@ namespace EvoluzeSped.Model.Registros
             public string N11_COD_MUN
             {
                 get { return COD_MUN; }
-                set { COD_MUN = value.ToUpper(); }
+                set { COD_MUN = value; }
             }
 
             private string IM = "";
@@ -122,7 +122,7 @@ namespace EvoluzeSped.Model.Registros
             public string N12_IM
             {
                 get { return IM; }
-                set { IM = value.ToUpper(); }
+                set { IM = value; }
             }
 
             private string SUFRAMA = "";
@@ -132,7 +132,7 @@ namespace EvoluzeSped.Model.Registros
             public string N13_SUFRAMA
             {
                 get { return SUFRAMA; }
-                set { SUFRAMA = value.ToUpper(); }
+                set { SUFRAMA = value; }
             }
 
             private string IND_PERFIL = "";
@@ -142,7 +142,7 @@ namespace EvoluzeSped.Model.Registros
             public string N14_IND_PERFIL
             {
                 get { return IND_PERFIL; }
-                set { IND_PERFIL = value.ToUpper(); }
+                set { IND_PERFIL = value; }
             }
 
             private string IND_ATIV = "";
@@ -152,7 +152,7 @@ namespace EvoluzeSped.Model.Registros
             public string N15_IND_ATIV
             {
                 get { return IND_ATIV; }
-                set { IND_ATIV = value.ToUpper(); }
+                set { IND_ATIV = value; }
             }
 
             public string GetRegistro_0000(bool Validate)
@@ -344,12 +344,12 @@ namespace EvoluzeSped.Model.Registros
 
         public class Registro_0001
         {
-            private string F_REG = "0001";
+            private string F_REG = "";
 
             public string N01_REG
             {
                 get { return F_REG; }
-                set { F_REG = value.ToUpper(); }
+                set { F_REG = value; }
             }
             private string F_IND_MOV = "";
             /// <summary>
@@ -358,7 +358,7 @@ namespace EvoluzeSped.Model.Registros
             public string N02_IND_MOV
             {
                 get { return F_IND_MOV; }
-                set { F_IND_MOV = value.ToUpper(); }
+                set { F_IND_MOV = value; }
             }
 
             public string GetRegistro_0001(bool Validate)
@@ -398,12 +398,12 @@ namespace EvoluzeSped.Model.Registros
         //  CLASSIFICAÇÃO DO ESTABELECIMENTO INDUSTRIAL OU EQUIPARADO A 
         public class Registro_0002
         {
-            private string F_REG = "0002";
+            private string F_REG = "";
 
             public string N01_REG
             {
                 get { return F_REG; }
-                set { F_REG = value.ToUpper(); }
+                set { F_REG = value; }
             }
             private string F_CLAS_ESTAB_IND = "";
             /// <summary>
@@ -412,7 +412,7 @@ namespace EvoluzeSped.Model.Registros
             public string N02_CLAS_ESTAB_IND
             {
                 get { return F_CLAS_ESTAB_IND; }
-                set { F_CLAS_ESTAB_IND = value.ToUpper(); }
+                set { F_CLAS_ESTAB_IND = value; }
             }
 
             public string GetRegistro_0002(bool Validate)
@@ -454,14 +454,14 @@ namespace EvoluzeSped.Model.Registros
         /// </summary>
         public class Registro_0005
         {
-            private string F_REG = "0005";
+            private string F_REG = "";
             /// <summary>
             /// Texto fixo contendo “0005”
             /// </summary>
             public string N01_REG
             {
                 get { return F_REG; }
-                set { F_REG = value.ToUpper(); }
+                set { F_REG = value; }
             }
 
             private string F_FANTASIA = "";
@@ -471,7 +471,7 @@ namespace EvoluzeSped.Model.Registros
             public string N02_FANTASIA
             {
                 get { return F_FANTASIA; }
-                set { F_FANTASIA = value.ToUpper(); }
+                set { F_FANTASIA = value; }
             }
 
             private string F_CEP = "";
@@ -481,7 +481,7 @@ namespace EvoluzeSped.Model.Registros
             public string N03_CEP
             {
                 get { return F_CEP; }
-                set { F_CEP = value.ToUpper(); }
+                set { F_CEP = value; }
             }
 
             private string F_END = "";
@@ -491,7 +491,7 @@ namespace EvoluzeSped.Model.Registros
             public string N04_END
             {
                 get { return F_END; }
-                set { F_END = value.ToUpper(); }
+                set { F_END = value; }
             }
 
             private string F_NUM = "";
@@ -501,7 +501,7 @@ namespace EvoluzeSped.Model.Registros
             public string N05_NUM
             {
                 get { return F_NUM; }
-                set { F_NUM = value.ToUpper(); }
+                set { F_NUM = value; }
             }
 
             private string F_COMPL = "";
@@ -511,7 +511,7 @@ namespace EvoluzeSped.Model.Registros
             public string N06_COMPL
             {
                 get { return F_COMPL; }
-                set { F_COMPL = value.ToUpper(); }
+                set { F_COMPL = value; }
             }
 
             private string F_BAIRRO = "";
@@ -521,7 +521,7 @@ namespace EvoluzeSped.Model.Registros
             public string N07_BAIRRO
             {
                 get { return F_BAIRRO; }
-                set { F_BAIRRO = value.ToUpper(); }
+                set { F_BAIRRO = value; }
             }
 
             private string F_FONE = "";
@@ -531,7 +531,7 @@ namespace EvoluzeSped.Model.Registros
             public string N08_FONE
             {
                 get { return F_FONE; }
-                set { F_FONE = value.ToUpper(); }
+                set { F_FONE = value; }
             }
 
             private string F_FAX = "";
@@ -541,7 +541,7 @@ namespace EvoluzeSped.Model.Registros
             public string N09_FAX
             {
                 get { return F_FAX; }
-                set { F_FAX = value.ToUpper(); }
+                set { F_FAX = value; }
             }
 
             private string F_EMAIL = "";
@@ -551,7 +551,7 @@ namespace EvoluzeSped.Model.Registros
             public string N10_EMAIL
             {
                 get { return F_EMAIL; }
-                set { F_EMAIL = value.ToUpper(); }
+                set { F_EMAIL = value; }
             }
 
             public string GetRegistro(bool Validate)
@@ -643,14 +643,14 @@ namespace EvoluzeSped.Model.Registros
         /// </summary>
         public class Registro_0015
         {
-            private string F_REG = "0015";
+            private string F_REG = "";
             /// <summary>
             /// Texto fixo contendo “0015”
             /// </summary>
             public string N01_REG
             {
                 get { return F_REG; }
-                set { F_REG = value.ToUpper(); }
+                set { F_REG = value; }
             }
 
             private string F_UF_ST = "";
@@ -661,7 +661,7 @@ namespace EvoluzeSped.Model.Registros
             public string N02_UF_ST
             {
                 get { return F_UF_ST; }
-                set { F_UF_ST = value.ToUpper(); }
+                set { F_UF_ST = value; }
             }
 
             private string F_IE_ST = "";
@@ -673,10 +673,10 @@ namespace EvoluzeSped.Model.Registros
             public string N03_IE_ST
             {
                 get { return F_IE_ST; }
-                set { F_IE_ST = value.ToUpper(); }
+                set { F_IE_ST = value; }
             }
 
-            
+
             public string GetRegistro(bool Validate)
             {
                 if (Validate)
@@ -706,7 +706,7 @@ namespace EvoluzeSped.Model.Registros
                     {
                         return "Erro -> Tamanho do campo de CEP incorreto(a)";
                     }
-                   
+
                 }
                 return String.Format("|{0}|{1}|{2}|", F_REG, F_UF_ST, F_IE_ST);
             }
@@ -717,11 +717,11 @@ namespace EvoluzeSped.Model.Registros
         /// </summary>
         public class Registro_0100
         {
-            private string F_REG = "0100";
+            private string F_REG = "";
             public string N01_REG
             {
                 get { return F_REG; }
-                set { F_REG = value.ToUpper(); }
+                set { F_REG = value; }
             }
 
             private string F_NOME = "";
@@ -731,7 +731,7 @@ namespace EvoluzeSped.Model.Registros
             public string N02_NOME
             {
                 get { return F_NOME; }
-                set { F_NOME = value.ToUpper(); }
+                set { F_NOME = value; }
             }
 
             private string F_CPF = "";
@@ -741,7 +741,7 @@ namespace EvoluzeSped.Model.Registros
             public string N03_CPF
             {
                 get { return F_CPF; }
-                set { F_CPF = value.ToUpper(); }
+                set { F_CPF = value; }
             }
 
             private string F_CRC = "";
@@ -751,7 +751,7 @@ namespace EvoluzeSped.Model.Registros
             public string N04_CRC
             {
                 get { return F_CRC; }
-                set { F_CRC = value.ToUpper(); }
+                set { F_CRC = value; }
             }
 
             private string F_CNPJ = "";
@@ -761,7 +761,7 @@ namespace EvoluzeSped.Model.Registros
             public string N05_CNPJ
             {
                 get { return F_CNPJ; }
-                set { F_CNPJ = value.ToUpper(); }
+                set { F_CNPJ = value; }
             }
 
             private string F_CEP = "";
@@ -771,7 +771,7 @@ namespace EvoluzeSped.Model.Registros
             public string N06_CEP
             {
                 get { return F_CEP; }
-                set { F_CEP = value.ToUpper(); }
+                set { F_CEP = value; }
             }
 
             private string F_END = "";
@@ -781,7 +781,7 @@ namespace EvoluzeSped.Model.Registros
             public string N07_END
             {
                 get { return F_END; }
-                set { F_END = value.ToUpper(); }
+                set { F_END = value; }
             }
 
             private string F_NUM = "";
@@ -791,7 +791,7 @@ namespace EvoluzeSped.Model.Registros
             public string N08_NUM
             {
                 get { return F_NUM; }
-                set { F_NUM = value.ToUpper(); }
+                set { F_NUM = value; }
             }
 
             private string F_COMPL = "";
@@ -801,7 +801,7 @@ namespace EvoluzeSped.Model.Registros
             public string N09_COMPL
             {
                 get { return F_COMPL; }
-                set { F_COMPL = value.ToUpper(); }
+                set { F_COMPL = value; }
             }
 
             private string F_BAIRRO = "";
@@ -811,7 +811,7 @@ namespace EvoluzeSped.Model.Registros
             public string N10_BAIRRO
             {
                 get { return F_BAIRRO; }
-                set { F_BAIRRO = value.ToUpper(); }
+                set { F_BAIRRO = value; }
             }
 
             private string F_FONE = "";
@@ -821,7 +821,7 @@ namespace EvoluzeSped.Model.Registros
             public string N11_FONE
             {
                 get { return F_FONE; }
-                set { F_FONE = value.ToUpper(); }
+                set { F_FONE = value; }
             }
 
             private string F_FAX = "";
@@ -831,7 +831,7 @@ namespace EvoluzeSped.Model.Registros
             public string N12_FAX
             {
                 get { return F_FAX; }
-                set { F_FAX = value.ToUpper(); }
+                set { F_FAX = value; }
             }
 
             private string F_EMAIL = "";
@@ -841,7 +841,7 @@ namespace EvoluzeSped.Model.Registros
             public string N13_EMAIL
             {
                 get { return F_EMAIL; }
-                set { F_EMAIL = value.ToUpper(); }
+                set { F_EMAIL = value; }
             }
 
             private string F_COD_MUN = "";
@@ -851,7 +851,7 @@ namespace EvoluzeSped.Model.Registros
             public string N14_COD_MUN
             {
                 get { return F_COD_MUN; }
-                set { F_COD_MUN = value.ToUpper(); }
+                set { F_COD_MUN = value; }
             }
 
             public string GetRegistro_0100(bool Validate)
@@ -973,11 +973,11 @@ namespace EvoluzeSped.Model.Registros
         /// </summary>
         public class Registro_0150
         {
-            private string REG = "0150";
+            private string REG = "";
             public string N01_REG
             {
                 get { return REG; }
-                set { REG = value.ToUpper(); }
+                set { REG = value; }
             }
 
             // Código de identificação do participante no arquivo 
@@ -985,7 +985,7 @@ namespace EvoluzeSped.Model.Registros
             public string N02_COD_PART
             {
                 get { return COD_PART; }
-                set { COD_PART = value.ToUpper(); }
+                set { COD_PART = value; }
             }
 
             // Nome pessoal ou empresarial do participante 
@@ -994,7 +994,7 @@ namespace EvoluzeSped.Model.Registros
             public string N03_NOME
             {
                 get { return NOME; }
-                set { NOME = value.ToUpper(); }
+                set { NOME = value; }
             }
 
             // Código do país do participante, conforme a tabela indicada no item 3.2.1 
@@ -1003,56 +1003,56 @@ namespace EvoluzeSped.Model.Registros
             public string N04_COD_PAIS
             {
                 get { return COD_PAIS; }
-                set { COD_PAIS = value.ToUpper(); }
+                set { COD_PAIS = value; }
             }
 
             private string CNPJ = "";
             public string N05_CNPJ
             {
                 get { return CNPJ; }
-                set { CNPJ = value.ToUpper(); }
+                set { CNPJ = value; }
             }
 
             private string CPF = "";
             public string N06_CPF
             {
                 get { return CPF; }
-                set { CPF = value.ToUpper(); }
+                set { CPF = value; }
             }
 
             private string IE = "";
             public string N07_IE
             {
                 get { return IE; }
-                set { IE = value.ToUpper(); }
+                set { IE = value; }
             }
 
             private string COD_MUN = "";
             public string N08_COD_MUN
             {
                 get { return COD_MUN; }
-                set { COD_MUN = value.ToUpper(); }
+                set { COD_MUN = value; }
             }
 
             private string SUFRAMA = "";
             public string N09_SUFRAMA
             {
                 get { return SUFRAMA; }
-                set { SUFRAMA = value.ToUpper(); }
+                set { SUFRAMA = value; }
             }
 
             private string END = "";
             public string N10_END
             {
                 get { return END; }
-                set { END = value.ToUpper(); }
+                set { END = value; }
             }
 
             private string NUM = "";
             public string N11_NUM
             {
                 get { return NUM; }
-                set { NUM = value.ToUpper(); }
+                set { NUM = value; }
             }
 
             private string COMPL = "";
@@ -1062,7 +1062,7 @@ namespace EvoluzeSped.Model.Registros
             public string N12_COMPL
             {
                 get { return COMPL; }
-                set { COMPL = value.ToUpper(); }
+                set { COMPL = value; }
             }
 
             private string BAIRRO = "";
@@ -1072,7 +1072,7 @@ namespace EvoluzeSped.Model.Registros
             public string N13_BAIRRO
             {
                 get { return BAIRRO; }
-                set { BAIRRO = value.ToUpper(); }
+                set { BAIRRO = value; }
             }
 
             public string GetRegistro_150(bool Validate)
@@ -1157,16 +1157,106 @@ namespace EvoluzeSped.Model.Registros
         /// <summary>
         /// IDENTIFICAÇÃO DAS UNIDADES DE MEDIDA
         /// </summary>
-        public class Registro_0190
+        public class Registro_0175
         {
-            private string REG = "0190";
+            private string REG = "";
             /// <summary>
             /// Texto fixo contendo "0190"
             /// </summary>
             public string N01_REG
             {
                 get { return REG; }
-                set { REG = value.ToUpper(); }
+                set { REG = value; }
+            }
+
+            private string DT_ALT = "";
+            /// <summary>
+            /// Data de alteração do cadastro
+            /// </summary>
+            public string N02_DT_ALT
+            {
+                get { return DT_ALT; }
+                set { DT_ALT = value; }
+            }
+
+            private string NR_CAMPO = "";
+            /// <summary>
+            /// Número do campo alterado (campos 03 a 13, exceto 07)
+            /// </summary>
+            public string N03_NR_CAMPO
+            {
+                get { return NR_CAMPO; }
+                set { NR_CAMPO = value; }
+            }
+
+            private string CONT_ANT = "";
+            /// <summary>
+            /// Conteúdo anterior do campo
+            /// </summary>
+            public string N04_CONT_ANT
+            {
+                get { return CONT_ANT; }
+                set { CONT_ANT = value; }
+            }
+
+            public string GetRegistro_0170(bool Validate)
+            {
+                if (Validate)
+                {
+                    /* validacao para o tamanho do campo REG */
+                    if (REG.Length > 4)
+                    {
+                        return "Erro -> Tamanho do campo de REG incorreto(a)";
+                    }
+                    /* validacao para a obrigatoriedade do campo REG */
+                    if (REG.Trim().Trim().Equals(""))
+                    {
+                        return "Erro -> Campo Obrigatório REG não informado(a)";
+                    }
+                    /* validacao para o tamanho do campo UNID */
+                    if (DT_ALT.Length > 6)
+                    {
+                        return "Erro -> Tamanho do campo de UNID incorreto(a)";
+                    }
+                    /* validacao para a obrigatoriedade do campo UNID */
+                    if (DT_ALT.Trim().Trim().Equals(""))
+                    {
+                        return "Erro -> Campo Obrigatório UNID não informado(a)";
+                    }
+                    /* validacao para o tamanho do campo UNID */
+                    if (DT_ALT.Length > 6)
+                    {
+                        return "Erro -> Tamanho do campo de UNID incorreto(a)";
+                    }
+                    /* validacao para a obrigatoriedade do campo DESCR */
+                    if (NR_CAMPO.Trim().Trim().Equals(""))
+                    {
+                        return "Erro -> Campo Obrigatório DESCR não informado(a)";
+                    }
+                    /* validacoes manuais */
+                    if (DT_ALT.Equals(NR_CAMPO))
+                    {
+                        return "Erro -> Campo UNID e DESCR não podem ser iguais";
+                    }
+                }
+                return String.Format("|{0}|{1}|{2}|{3}|", REG, DT_ALT, NR_CAMPO, CONT_ANT);
+            }
+        }
+
+
+        /// <summary>
+        /// IDENTIFICAÇÃO DAS UNIDADES DE MEDIDA
+        /// </summary>
+        public class Registro_0190
+        {
+            private string REG = "";
+            /// <summary>
+            /// Texto fixo contendo "0190"
+            /// </summary>
+            public string N01_REG
+            {
+                get { return REG; }
+                set { REG = value; }
             }
 
             private string UNID = "";
@@ -1176,7 +1266,7 @@ namespace EvoluzeSped.Model.Registros
             public string N02_UNID
             {
                 get { return UNID; }
-                set { UNID = value.ToUpper(); }
+                set { UNID = value; }
             }
 
             private string DESCR = "";
@@ -1186,7 +1276,7 @@ namespace EvoluzeSped.Model.Registros
             public string N03_DESCR
             {
                 get { return DESCR; }
-                set { DESCR = value.ToUpper(); }
+                set { DESCR = value; }
             }
 
             public string GetRegistro_0190(bool Validate)
@@ -1238,14 +1328,14 @@ namespace EvoluzeSped.Model.Registros
         /// </summary>
         public class Registro_0200
         {
-            private string REG = "0200";
+            private string REG = "";
             /// <summary>
             /// Texto fixo contendo "0200"
             /// </summary>
             public string N01_REG
             {
                 get { return REG; }
-                set { REG = value.ToUpper(); }
+                set { REG = value; }
             }
 
             private string COD_ITEM = "";
@@ -1255,7 +1345,7 @@ namespace EvoluzeSped.Model.Registros
             public string N02_COD_ITEM
             {
                 get { return COD_ITEM; }
-                set { COD_ITEM = value.ToUpper(); }
+                set { COD_ITEM = value; }
             }
 
             private string DESCR_ITEM = "";
@@ -1265,7 +1355,7 @@ namespace EvoluzeSped.Model.Registros
             public string N03_DESCR_ITEM
             {
                 get { return DESCR_ITEM; }
-                set { DESCR_ITEM = value.ToUpper(); }
+                set { DESCR_ITEM = value; }
             }
 
             private string COD_BARRA = "";
@@ -1275,7 +1365,7 @@ namespace EvoluzeSped.Model.Registros
             public string N04_COD_BARRA
             {
                 get { return COD_BARRA; }
-                set { COD_BARRA = value.ToUpper(); }
+                set { COD_BARRA = value; }
             }
 
             private string COD_ANT_ITEM = "";
@@ -1285,7 +1375,7 @@ namespace EvoluzeSped.Model.Registros
             public string N05_COD_ANT_ITEM
             {
                 get { return COD_ANT_ITEM; }
-                set { COD_ANT_ITEM = value.ToUpper(); }
+                set { COD_ANT_ITEM = value; }
             }
 
             private string UNID_INV = "";
@@ -1295,7 +1385,7 @@ namespace EvoluzeSped.Model.Registros
             public string N06_UNID_INV
             {
                 get { return UNID_INV; }
-                set { UNID_INV = value.ToUpper(); }
+                set { UNID_INV = value; }
             }
 
             private string TIPO_ITEM = "";
@@ -1305,7 +1395,7 @@ namespace EvoluzeSped.Model.Registros
             public string N07_TIPO_ITEM
             {
                 get { return TIPO_ITEM; }
-                set { TIPO_ITEM = value.ToUpper(); }
+                set { TIPO_ITEM = value; }
             }
 
             private string COD_NCM = "";
@@ -1315,7 +1405,7 @@ namespace EvoluzeSped.Model.Registros
             public string N08_COD_NCM
             {
                 get { return COD_NCM; }
-                set { COD_NCM = value.ToUpper(); }
+                set { COD_NCM = value; }
             }
 
             private string EX_IPI = "";
@@ -1325,7 +1415,7 @@ namespace EvoluzeSped.Model.Registros
             public string N09_EX_IPI
             {
                 get { return EX_IPI; }
-                set { EX_IPI = value.ToUpper(); }
+                set { EX_IPI = value; }
             }
 
             private string COD_GEN = "";
@@ -1335,7 +1425,7 @@ namespace EvoluzeSped.Model.Registros
             public string N10_COD_GEN
             {
                 get { return COD_GEN; }
-                set { COD_GEN = value.ToUpper(); }
+                set { COD_GEN = value; }
             }
 
             private string COD_LST = "";
@@ -1345,7 +1435,7 @@ namespace EvoluzeSped.Model.Registros
             public string N11_COD_LST
             {
                 get { return COD_LST; }
-                set { COD_LST = value.ToUpper(); }
+                set { COD_LST = value; }
             }
 
             private string ALIQ_ICMS = "";
@@ -1355,14 +1445,14 @@ namespace EvoluzeSped.Model.Registros
             public string N12_ALIQ_ICMS
             {
                 get { return ALIQ_ICMS; }
-                set { ALIQ_ICMS = value.ToUpper(); }
+                set { ALIQ_ICMS = value; }
             }
 
             private string CEST = "";
             public string N13_CEST
             {
                 get { return CEST; }
-                set { CEST = value.ToUpper(); }
+                set { CEST = value; }
             }
 
             public string GetRegistro_0200(bool Validate)
@@ -1501,14 +1591,14 @@ namespace EvoluzeSped.Model.Registros
         /// </summary>
         public class Registro_0205
         {
-            private string REG = "0205";
+            private string REG = "";
             /// <summary>
             /// Texto fixo contendo "0205"
             /// </summary>
             public string N01_REG
             {
                 get { return REG; }
-                set { REG = value.ToUpper(); }
+                set { REG = value; }
             }
 
             private string DESCR_ANT_ITEM = "";
@@ -1518,7 +1608,7 @@ namespace EvoluzeSped.Model.Registros
             public string N02_DESCR_ANT_ITEM
             {
                 get { return DESCR_ANT_ITEM; }
-                set { DESCR_ANT_ITEM = value.ToUpper(); }
+                set { DESCR_ANT_ITEM = value; }
             }
 
             private string DT_INI = "";
@@ -1528,7 +1618,7 @@ namespace EvoluzeSped.Model.Registros
             public string N03_DT_INI
             {
                 get { return DT_INI; }
-                set { DT_INI = value.ToUpper(); }
+                set { DT_INI = value; }
             }
 
             private string DT_FIM = "";
@@ -1538,7 +1628,7 @@ namespace EvoluzeSped.Model.Registros
             public string N04_DT_FIM
             {
                 get { return DT_FIM; }
-                set { DT_FIM = value.ToUpper(); }
+                set { DT_FIM = value; }
             }
 
             private string F_COD_ANT_ITEM = "";
@@ -1548,7 +1638,7 @@ namespace EvoluzeSped.Model.Registros
             public string N05_COD_ANT_ITEM
             {
                 get { return F_COD_ANT_ITEM; }
-                set { F_COD_ANT_ITEM = value.ToUpper(); }
+                set { F_COD_ANT_ITEM = value; }
             }
 
             public string GetRegistro_0205(bool Validate)
@@ -1625,14 +1715,14 @@ namespace EvoluzeSped.Model.Registros
         /// </summary>
         public class Registro_0206
         {
-            private string REG = "0206";
+            private string REG = "";
             /// <summary>
             /// Texto fixo contendo "0206"
             /// </summary>
             public string N01_REG
             {
                 get { return REG; }
-                set { REG = value.ToUpper(); }
+                set { REG = value; }
             }
 
             private string F_COD_COMB = "";
@@ -1642,7 +1732,7 @@ namespace EvoluzeSped.Model.Registros
             public string N02_COD_COMB
             {
                 get { return F_COD_COMB; }
-                set { F_COD_COMB = value.ToUpper(); }
+                set { F_COD_COMB = value; }
             }
 
             public string GetRegistro_0206(bool Validate)
@@ -1686,16 +1776,107 @@ namespace EvoluzeSped.Model.Registros
         /// <summary>
         /// FATORES DE CONVERSÃO DE UNIDADES
         /// </summary>
+        public class Registro_0210
+        {
+            private string REG = "";
+            public string N01_REG
+            {
+                get { return REG; }
+                set { REG = value; }
+            }
+
+            private string COD_ITEM_COMP = "";
+            /// <summary>
+            /// Código do item componente/insumo (campo 02 do Registro 0200)
+            /// </summary>
+            public string N02_COD_ITEM_COMP
+            {
+                get { return COD_ITEM_COMP; }
+                set { COD_ITEM_COMP = value; }
+            }
+
+            private string QTD_COMP = "";
+            /// <summary>
+            /// Quantidade do item componente/insumo para se produzir uma unidade do item composto/resultante
+            /// </summary>
+            public string N03_QTD_COMP
+            {
+                get { return QTD_COMP; }
+                set { QTD_COMP = value; }
+            }
+
+            private string PERDA = "";
+            /// <summary>
+            /// Quantidade do item componente/insumo para se produzir uma unidade do item composto/resultante
+            /// </summary>
+            public string N04_PERDA
+            {
+                get { return PERDA; }
+                set { PERDA = value; }
+            }
+
+            public string GetRegistro_0220(bool Validate)
+            {
+                if (Validate)
+                {
+                    /* validacao para o tamanho do campo REG */
+                    if (REG.Length > 4)
+                    {
+                        return "Erro -> Tamanho do campo de REG incorreto(a)";
+                    }
+                    /* validacao para a obrigatoriedade do campo REG */
+                    if (REG.Trim().Trim().Equals(""))
+                    {
+                        return "Erro -> Campo Obrigatório REG não informado(a)";
+                    }
+                    /* validacao para o tamanho do campo UNID_CONV */
+                    if (COD_ITEM_COMP.Length > 6)
+                    {
+                        return "Erro -> Tamanho do campo de UNID_CONV incorreto(a)";
+                    }
+                    /* validacao para a obrigatoriedade do campo UNID_CONV */
+                    if (COD_ITEM_COMP.Trim().Trim().Equals(""))
+                    {
+                        return "Erro -> Campo Obrigatório UNID_CONV não informado(a)";
+                    }
+                    /* validacao para o tamanho do campo UNID_CONV */
+                    if (COD_ITEM_COMP.Length > 6)
+                    {
+                        return "Erro -> Tamanho do campo de UNID_CONV incorreto(a)";
+                    }
+                    /* validacao para a obrigatoriedade do campo FAT_CONV */
+                    if (QTD_COMP.Trim().Trim().Equals(""))
+                    {
+                        return "Erro -> Campo Obrigatório FAT_CONV não informado(a)";
+                    }
+                    /* validacoes manuais */
+                    if (!(Convert.ToInt32(QTD_COMP) > 0))
+                    {
+                        return "Erro -> FAT_CONV deve ser maior que '0'";
+                    }
+
+                    /*
+                     * Campo 02 - Validação: o valor informado no campo deve existir no campo UNID do registro 0190.
+                    */
+                }
+                return String.Format("|{0}|{1}|{2}|{3}|", REG, COD_ITEM_COMP, QTD_COMP, PERDA);
+            }
+        }
+
+
+        /// <summary>
+        /// FATORES DE CONVERSÃO DE UNIDADES
+        /// </summary>
         public class Registro_0220
         {
-            private string REG = "0220";
+            private string REG = "";
             /// <summary>
             /// Texto fixo contendo "0220"
             /// </summary>
             public string N01_REG
             {
                 get { return REG; }
-                set { REG = value.ToUpper(); }
+                set { REG = value; }
             }
 
             private string UNID_CONV = "";
@@ -1705,7 +1886,7 @@ namespace EvoluzeSped.Model.Registros
             public string N02_UNID_CONV
             {
                 get { return UNID_CONV; }
-                set { UNID_CONV = value.ToUpper(); }
+                set { UNID_CONV = value; }
             }
 
             private string FAT_CONV = "";
@@ -1715,7 +1896,7 @@ namespace EvoluzeSped.Model.Registros
             public string N03_FAT_CONV
             {
                 get { return FAT_CONV; }
-                set { FAT_CONV = value.ToUpper(); }
+                set { FAT_CONV = value; }
             }
 
             public string GetRegistro_0220(bool Validate)
@@ -1771,53 +1952,53 @@ namespace EvoluzeSped.Model.Registros
         /// </summary>
         public class Registro_0300
         {
-            private string REG = "0300";
+            private string REG = "";
             public string N01_REG
             {
                 get { return REG; }
-                set { REG = value.ToUpper(); }
+                set { REG = value; }
             }
 
             private string COD_IND_BEM = "";
             public string N02_COD_IND_BEM
             {
                 get { return COD_IND_BEM; }
-                set { COD_IND_BEM = value.ToUpper(); }
+                set { COD_IND_BEM = value; }
             }
 
             private string IDENT_MERC = "";
             public string N03_IDENT_MERC
             {
                 get { return IDENT_MERC; }
-                set { IDENT_MERC = value.ToUpper(); }
+                set { IDENT_MERC = value; }
             }
 
             private string DESCR_ITEM = "";
             public string N04_DESCR_ITEM
             {
                 get { return DESCR_ITEM; }
-                set { DESCR_ITEM = value.ToUpper(); }
+                set { DESCR_ITEM = value; }
             }
 
             private string COD_PRNC = "";
             public string N05_COD_PRNC
             {
                 get { return COD_PRNC; }
-                set { COD_PRNC = value.ToUpper(); }
+                set { COD_PRNC = value; }
             }
 
             private string COD_CTA = "";
             public string N06_COD_CTA
             {
                 get { return COD_CTA; }
-                set { COD_CTA = value.ToUpper(); }
+                set { COD_CTA = value; }
             }
 
             private string NR_PARC = "";
             public string N07_NR_PARC
             {
                 get { return NR_PARC; }
-                set { NR_PARC = value.ToUpper(); }
+                set { NR_PARC = value; }
             }
 
             public string GetRegistro_0300(bool Validate)
@@ -1844,32 +2025,32 @@ namespace EvoluzeSped.Model.Registros
         /// </summary>
         public class Registro_0305
         {
-            private string REG = "0305";
+            private string REG = "";
             public string N01_REG
             {
                 get { return REG; }
-                set { REG = value.ToUpper(); }
+                set { REG = value; }
             }
 
             private string COD_CCUS = "";
             public string N02_COD_CCUS
             {
                 get { return COD_CCUS; }
-                set { COD_CCUS = value.ToUpper(); }
+                set { COD_CCUS = value; }
             }
 
             private string FUNC = "";
             public string N03_FUNC
             {
                 get { return FUNC; }
-                set { FUNC = value.ToUpper(); }
+                set { FUNC = value; }
             }
 
             private string VIDA_UTIL = "";
             public string N04_VIDA_UTIL
             {
                 get { return VIDA_UTIL; }
-                set { VIDA_UTIL = value.ToUpper(); }
+                set { VIDA_UTIL = value; }
             }
 
 
@@ -1898,14 +2079,14 @@ namespace EvoluzeSped.Model.Registros
         /// </summary>
         public class Registro_0400
         {
-            private string F_REG = "0400";
+            private string F_REG = "";
             /// <summary>
             /// Texto fixo contendo "0400"
             /// </summary>
             public string N01_REG
             {
                 get { return F_REG; }
-                set { F_REG = value.ToUpper(); }
+                set { F_REG = value; }
             }
 
             private string F_COD_NAT = "";
@@ -1915,7 +2096,7 @@ namespace EvoluzeSped.Model.Registros
             public string N02_COD_NAT
             {
                 get { return F_COD_NAT; }
-                set { F_COD_NAT = value.ToUpper(); }
+                set { F_COD_NAT = value; }
             }
 
             private string F_DESCR_NAT = "";
@@ -1925,7 +2106,7 @@ namespace EvoluzeSped.Model.Registros
             public string N03_DESCR_NAT
             {
                 get { return F_DESCR_NAT; }
-                set { F_DESCR_NAT = value.ToUpper(); }
+                set { F_DESCR_NAT = value; }
             }
 
             public string GetRegistro_0400(bool Validate)
@@ -1977,14 +2158,14 @@ namespace EvoluzeSped.Model.Registros
         /// </summary>
         public class Registro_0450
         {
-            private string REG = "0450";
+            private string REG = "";
             /// <summary>
             /// Texto fixo contendo "0450"
             /// </summary>
             public string N01_REG
             {
                 get { return REG; }
-                set { REG = value.ToUpper(); }
+                set { REG = value; }
             }
 
             private string COD_INF = "";
@@ -1994,7 +2175,7 @@ namespace EvoluzeSped.Model.Registros
             public string N02_COD_INF
             {
                 get { return COD_INF; }
-                set { COD_INF = value.ToUpper(); }
+                set { COD_INF = value; }
             }
 
             private string TXT = "";
@@ -2004,7 +2185,7 @@ namespace EvoluzeSped.Model.Registros
             public string N03_TXT
             {
                 get { return TXT; }
-                set { TXT = value.ToUpper(); }
+                set { TXT = value; }
             }
 
             public string GetRegistro_0450(bool Validate)
@@ -2056,14 +2237,14 @@ namespace EvoluzeSped.Model.Registros
         /// </summary>
         public class Registro_0460
         {
-            private string REG = "0460";
+            private string REG = "";
             /// <summary>
             /// Texto fixo contendo "0460"
             /// </summary>
             public string N01_REG
             {
                 get { return REG; }
-                set { REG = value.ToUpper(); }
+                set { REG = value; }
             }
 
             private string COD_OBS = "";
@@ -2073,7 +2254,7 @@ namespace EvoluzeSped.Model.Registros
             public string N02_COD_OBS
             {
                 get { return COD_OBS; }
-                set { COD_OBS = value.ToUpper(); }
+                set { COD_OBS = value; }
             }
 
             private string TXT = "";
@@ -2083,7 +2264,7 @@ namespace EvoluzeSped.Model.Registros
             public string N03_TXT
             {
                 get { return TXT; }
-                set { TXT = value.ToUpper(); }
+                set { TXT = value; }
             }
 
             public string GetRegistro_0460(bool Validate)
@@ -2137,14 +2318,14 @@ namespace EvoluzeSped.Model.Registros
         /// </summary>
         public class Registro_0500
         {
-            private string REG = "0500";
+            private string REG = "";
             /// <summary>
             /// Texto fixo contendo “0500”
             /// </summary>
             public string N01_REG
             {
                 get { return REG; }
-                set { REG = value.ToUpper(); }
+                set { REG = value; }
             }
 
             private string DT_ALT = "";
@@ -2154,7 +2335,7 @@ namespace EvoluzeSped.Model.Registros
             public string N02_DT_ALT
             {
                 get { return DT_ALT; }
-                set { DT_ALT = value.ToUpper(); }
+                set { DT_ALT = value; }
             }
 
             private string COD_NAT_CC = "";
@@ -2164,7 +2345,7 @@ namespace EvoluzeSped.Model.Registros
             public string N03_COD_NAT_CC
             {
                 get { return COD_NAT_CC; }
-                set { COD_NAT_CC = value.ToUpper(); }
+                set { COD_NAT_CC = value; }
             }
 
             private string IND_CTA = "";
@@ -2174,7 +2355,7 @@ namespace EvoluzeSped.Model.Registros
             public string N04_IND_CTA
             {
                 get { return IND_CTA; }
-                set { IND_CTA = value.ToUpper(); }
+                set { IND_CTA = value; }
             }
 
             private string NIVEL = "";
@@ -2184,7 +2365,7 @@ namespace EvoluzeSped.Model.Registros
             public string N05_NIVEL
             {
                 get { return NIVEL; }
-                set { NIVEL = value.ToUpper(); }
+                set { NIVEL = value; }
             }
 
             private string COD_CTA = "";
@@ -2194,7 +2375,7 @@ namespace EvoluzeSped.Model.Registros
             public string N06_COD_CTA
             {
                 get { return COD_CTA; }
-                set { COD_CTA = value.ToUpper(); }
+                set { COD_CTA = value; }
             }
 
             private string NOME_CTA = "";
@@ -2204,7 +2385,7 @@ namespace EvoluzeSped.Model.Registros
             public string N07_NOME_CTA
             {
                 get { return NOME_CTA; }
-                set { NOME_CTA = value.ToUpper(); }
+                set { NOME_CTA = value; }
             }
 
             public string GetRegistro_0500(bool Validate)
@@ -2306,14 +2487,14 @@ namespace EvoluzeSped.Model.Registros
         /// </summary>
         public class Registro_0600
         {
-            private string REG = "0600";
+            private string REG = "";
             /// <summary>
             /// Texto fixo contendo “0600”.
             /// </summary>
             public string N01_REG
             {
                 get { return REG; }
-                set { REG = value.ToUpper(); }
+                set { REG = value; }
             }
 
             private string DT_ALT = "";
@@ -2323,7 +2504,7 @@ namespace EvoluzeSped.Model.Registros
             public string N02_DT_ALT
             {
                 get { return DT_ALT; }
-                set { DT_ALT = value.ToUpper(); }
+                set { DT_ALT = value; }
             }
 
             private string COD_CCUS = "";
@@ -2333,7 +2514,7 @@ namespace EvoluzeSped.Model.Registros
             public string N03_COD_CCUS
             {
                 get { return COD_CCUS; }
-                set { COD_CCUS = value.ToUpper(); }
+                set { COD_CCUS = value; }
             }
 
             private string CCUS = "";
@@ -2343,7 +2524,7 @@ namespace EvoluzeSped.Model.Registros
             public string N04_CCUS
             {
                 get { return CCUS; }
-                set { CCUS = value.ToUpper(); }
+                set { CCUS = value; }
             }
 
             public string GetRegistro_0600(bool Validate)
@@ -2401,14 +2582,14 @@ namespace EvoluzeSped.Model.Registros
         /// </summary>
         public class Registro_0990
         {
-            private string REG = "0990";
+            private string REG = "";
             /// <summary>
             /// Texto fixo contendo "0990"
             /// </summary>
             public string N01_REG
             {
                 get { return REG; }
-                set { REG = value.ToUpper(); }
+                set { REG = value; }
             }
 
             private string QTD_LIN_0 = "";
@@ -2418,7 +2599,7 @@ namespace EvoluzeSped.Model.Registros
             public string N02_QTD_LIN_0
             {
                 get { return QTD_LIN_0; }
-                set { QTD_LIN_0 = value.ToUpper(); }
+                set { QTD_LIN_0 = value; }
             }
 
             public string GetRegistro(bool Validate)

@@ -52,6 +52,7 @@ namespace EvoluzeSped.Controller.Output
         {
             processaBloco0(sped.Bloco0);
             processaBloco1(sped.Bloco1);
+            processaBloco9(sped.Bloco9);
         }
 
         private void processaBloco0(Bloco0 bloco)
@@ -118,6 +119,14 @@ namespace EvoluzeSped.Controller.Output
             controller.GetRegistroExcelList(wb, new List<object>(bloco.Registro1975List));
             controller.GetRegistroExcelList(wb, new List<object>(bloco.Registro1980List));
             controller.GetRegistroExcel(wb, bloco.Registro1990);
+        }
+
+        private void processaBloco9(Bloco9 bloco)
+        {   
+            controller.GetRegistroExcel(wb, bloco.Registro9001);
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.Registro9900List));
+            controller.GetRegistroExcel(wb, bloco.Registro9990);
+            controller.GetRegistroExcel(wb, bloco.Registro9999);
         }
     }
 }

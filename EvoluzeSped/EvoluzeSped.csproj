@@ -79,8 +79,10 @@
     <Compile Include="Model\Arquivos\Sped_EFD_ICMS_IPI.cs" />
     <Compile Include="Model\Blocos\Bloco0.cs" />
     <Compile Include="Model\Blocos\Bloco1.cs" />
+    <Compile Include="Model\Blocos\Bloco9.cs" />
     <Compile Include="Model\Registros\RegistroBloco0.cs" />
     <Compile Include="Model\Registros\RegistroBloco1.cs" />
+    <Compile Include="Model\Registros\RegistroBloco9.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util.cs" />

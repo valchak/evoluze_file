@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static EvoluzeSped.Model.Registros.RegistroBloco0;
 using static EvoluzeSped.Model.Registros.RegistroBloco1;
+using static EvoluzeSped.Model.Registros.RegistroBloco9;
 
 namespace EvoluzeSped.Controller.Input
 {
@@ -53,7 +54,7 @@ namespace EvoluzeSped.Controller.Input
                     processaBloco1(array[1], linha);
                     break;
                 case "9":
-//                    processaBloco9(array[1], linha);
+                    processaBloco9(array[1], linha);
                     break;
                 case "B":
 //                    processaBlocoB(array[1], linha);
@@ -268,26 +269,28 @@ namespace EvoluzeSped.Controller.Input
             }
         }
 
+        private void processaBloco9(string registro, string linha)
+        {
+            switch (registro)
+            {
+                case "9001":
+                    sped.Bloco9.Registro9001 = (Registro_9001)controller.GetRegistro(linha, new Registro_9001());
+                    break;
+                case "9900":
+                    sped.Bloco9.Registro9900List.Add((Registro_9900)controller.GetRegistro(linha, new Registro_9900()));
+                    break;
+                case "9990":
+                    sped.Bloco9.Registro9990 = (Registro_9990)controller.GetRegistro(linha, new Registro_9990());
+                    break;
+                case "9999":
+                    sped.Bloco9.Registro9999 = (Registro_9999)controller.GetRegistro(linha, new Registro_9999());
+                    break;
+            }
+        }
+
 
         /* 
-                     private void processaBloco9(string registro, string linha)
-                     {
-                         switch (registro)
-                         {
-                             case "9001":
-                                 sped.Bloco9.Registro9001 = controller.Bloco9.GetRegistro9001(linha);
-                                 break;
-                             case "9900":
-                                 sped.Bloco9.Registro9900.Add(controller.Bloco9.GetRegistro9900(linha));
-                                 break;
-                             case "9990":
-                                 sped.Bloco9.Registro9990 = controller.Bloco9.GetRegistro9990(linha);
-                                 break;
-                             case "9999":
-                                 sped.Bloco9.Registro9999 = controller.Bloco9.GetRegistro9999(linha);
-                                 break;
-                         }
-                     }
+                    
 
 
                      private void processaBloco1(string registro, string linha)

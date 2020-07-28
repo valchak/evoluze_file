@@ -205,12 +205,12 @@ namespace EvoluzeSped.Model.Registros
                         return "Erro -> Campo Obrigatório DT_INI não informado(a)";
                     }
                     /* validacao para o tamanho do campo DT_FIN */
-                    if (DT_FIN.Length > 8)
+                    if (DT_FIN.ToString("ddMMyyyy").Length > 8)
                     {
                         return "Erro -> Tamanho do campo de DT_FIN incorreto(a)";
                     }
                     /* validacao para a obrigatoriedade do campo DT_FIN */
-                    if (DT_FIN.Trim().Trim().Equals(""))
+                    if (DT_FIN.ToString("ddMMyyyy").Trim().Trim().Equals(""))
                     {
                         return "Erro -> Campo Obrigatório DT_FIN não informado(a)";
                     }
@@ -319,7 +319,7 @@ namespace EvoluzeSped.Model.Registros
                     }
                     try
                     {
-                        dataFim = DateTime.ParseExact(N05_DT_FIN, "ddMMyyyy", System.Globalization.CultureInfo.CurrentCulture);
+                        dataFim = DateTime.ParseExact(N05_DT_FIN.ToString(), "ddMMyyyy", System.Globalization.CultureInfo.CurrentCulture);
                     }
                     catch (Exception)
                     {
@@ -338,7 +338,7 @@ namespace EvoluzeSped.Model.Registros
                             return "Erro -> CPF Inválido";
                     */
                 }
-                return String.Format("|{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|", REG, COD_VER, COD_FIN, DT_INI, DT_FIN, NOME, CNPJ, CPF, UF, IE, COD_MUN, IM, SUFRAMA, IND_PERFIL, IND_ATIV);
+                return String.Format("|{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|", REG, COD_VER, COD_FIN, DT_INI.ToString("ddMMyyyy"), DT_FIN.ToString("ddMMyyyy"), NOME, CNPJ, CPF, UF, IE, COD_MUN, IM, SUFRAMA, IND_PERFIL, IND_ATIV) ;
             }
         }
 

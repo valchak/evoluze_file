@@ -167,10 +167,19 @@ namespace EvoluzeSped.Controller.Input
                     sped.Bloco1.Registro1105List.Add((Registro_1105) controller.GetRegistro(linha, new Registro_1105()));
                     break;
                 case "1110":
+                    sped.Bloco1.Registro1110List.Add((Registro_1110)controller.GetRegistro(linha, new Registro_1110()));
                     break;
                 case "1200":
+                    sped.Bloco1.Registro1200List.Add((Registro_1200)controller.GetRegistro(linha, new Registro_1200()));
                     break;
                 case "1210":
+                    sped.Bloco1.Registro1210List.Add((Registro_1210)controller.GetRegistro(linha, new Registro_1210()));
+                    break;
+                case "1250":
+                    sped.Bloco1.Registro1250List.Add((Registro_1250)controller.GetRegistro(linha, new Registro_1250()));
+                    break;
+                case "1255":
+                    sped.Bloco1.Registro1255List.Add((Registro_1255)controller.GetRegistro(linha, new Registro_1255()));
                     break;
                 case "1300":
                     sped.Bloco1.Registro1300List.Add((Registro_1300) controller.GetRegistro(linha, new Registro_1300()));
@@ -191,49 +200,70 @@ namespace EvoluzeSped.Controller.Input
                     sped.Bloco1.Registro1370List.Add((Registro_1370) controller.GetRegistro(linha, new Registro_1370()));
                     break;
                 case "1390":
-                    break;
-                case "1391":
-                    break;
-                case "1400":
-                    break;
-                case "1500":
-                    break;
-                case "1510":
-                    break;
-                case "1600":
-                    break;
-                case "1700":
-                    break;
-                case "1710":
-                    break;
-                case "1800":
-                    break;
-                case "1900":
-                    break;
-                case "1910":
-                    break;
-                case "1920":
-                    break;
-                case "1921":
-                    break;
-                case "1922":
-                    break;
-                case "1923":
-                    break;
-                case "1925":
-                    break;
-                case "1926":
-                    break;
-                case "1960":
-                    break;
-                case "1970":
-                    break;
-                case "1975":
-                    break;
-                case "1980":
+                    sped.Bloco1.Registro1390List.Add((Registro_1390) controller.GetRegistro(linha, new Registro_1390()));
+                    break;                                           
+                case "1391":                                         
+                    sped.Bloco1.Registro1391List.Add((Registro_1391) controller.GetRegistro(linha, new Registro_1391()));
+                    break;                                           
+                case "1400":                                         
+                    sped.Bloco1.Registro1400List.Add((Registro_1400) controller.GetRegistro(linha, new Registro_1400()));
+                    break;                                           
+                case "1500":                                         
+                    sped.Bloco1.Registro1500List.Add((Registro_1500) controller.GetRegistro(linha, new Registro_1500()));
+                    break;                                           
+                case "1510":                                         
+                    sped.Bloco1.Registro1510List.Add((Registro_1510) controller.GetRegistro(linha, new Registro_1510()));
+                    break;                                           
+                case "1600":                                         
+                    sped.Bloco1.Registro1600List.Add((Registro_1600) controller.GetRegistro(linha, new Registro_1600()));
+                    break;                                           
+                case "1700":                                         
+                    sped.Bloco1.Registro1700List.Add((Registro_1700) controller.GetRegistro(linha, new Registro_1700()));
+                    break;                                           
+                case "1710":                                         
+                    sped.Bloco1.Registro1710List.Add((Registro_1710) controller.GetRegistro(linha, new Registro_1710()));
+                    break;                                           
+                case "1800":                                         
+                    sped.Bloco1.Registro1800List.Add((Registro_1800) controller.GetRegistro(linha, new Registro_1800()));
+                    break;                                           
+                case "1900":                                         
+                    sped.Bloco1.Registro1900List.Add((Registro_1900) controller.GetRegistro(linha, new Registro_1900()));
+                    break;                                           
+                case "1910":                                         
+                    sped.Bloco1.Registro1910List.Add((Registro_1910) controller.GetRegistro(linha, new Registro_1910()));
+                    break;                                           
+                case "1920":                                         
+                    sped.Bloco1.Registro1920List.Add((Registro_1920) controller.GetRegistro(linha, new Registro_1920()));
+                    break;                                           
+                case "1921":                                         
+                    sped.Bloco1.Registro1921List.Add((Registro_1921) controller.GetRegistro(linha, new Registro_1921()));
+                    break;                                           
+                case "1922":                                         
+                    sped.Bloco1.Registro1922List.Add((Registro_1922) controller.GetRegistro(linha, new Registro_1922()));
+                    break;                                           
+                case "1923":                                         
+                    sped.Bloco1.Registro1923List.Add((Registro_1923) controller.GetRegistro(linha, new Registro_1923()));
+                    break;                                           
+                case "1925":                                         
+                    sped.Bloco1.Registro1925List.Add((Registro_1925) controller.GetRegistro(linha, new Registro_1925()));
+                    break;                                           
+                case "1926":                                         
+                    sped.Bloco1.Registro1926List.Add((Registro_1926) controller.GetRegistro(linha, new Registro_1926()));
+                    break;                                           
+                case "1960":                                         
+                    sped.Bloco1.Registro1960List.Add((Registro_1960) controller.GetRegistro(linha, new Registro_1960()));
+                    break;                                           
+                case "1970":                                         
+                    sped.Bloco1.Registro1970List.Add((Registro_1970) controller.GetRegistro(linha, new Registro_1970()));
+                    break;                                           
+                case "1975":                                         
+                    sped.Bloco1.Registro1975List.Add((Registro_1975) controller.GetRegistro(linha, new Registro_1975()));
+                    break;                                           
+                case "1980":                                         
+                    sped.Bloco1.Registro1980List.Add((Registro_1980) controller.GetRegistro(linha, new Registro_1980()));
                     break;
                 case "1990":
-                    sped.Bloco1.Registro1990 = (Registro_1990)controller.GetRegistro(linha, new Registro_1990());
+                    sped.Bloco1.Registro1990 = (Registro_1990) controller.GetRegistro(linha, new Registro_1990());
                     break;
             }
         }

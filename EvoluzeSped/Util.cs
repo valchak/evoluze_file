@@ -58,8 +58,7 @@ namespace EvoluzeSped
 
         public string DateToStringExcel(DateTime objData)
         {
-            string novadata = objData.ToString("dd/MM/yyyy"); ;
-            return novadata;
+            return objData.ToString("dd/MM/yyyy");
         }
 
         public Dictionary<int, string> TabelExel()

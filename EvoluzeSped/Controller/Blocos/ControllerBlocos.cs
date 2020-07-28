@@ -70,6 +70,9 @@ namespace EvoluzeSped.Controller.Blocos
                         case "DateTime":
                             ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(util.DateToStringExcel((DateTime)objPropertyInfo.GetValue(registro)));
                             break;
+                        case "double":
+                            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(objPropertyInfo.GetValue(registro));
+                            break;
                         default:
                             ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(objPropertyInfo.GetValue(registro));
                             break;

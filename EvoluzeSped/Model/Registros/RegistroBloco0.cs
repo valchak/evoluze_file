@@ -35,21 +35,21 @@ namespace EvoluzeSped.Model.Registros
                 set { COD_FIN = value; }
             }
 
-            private string DT_INI = "";
+            private DateTime DT_INI;
             /// <summary>
             /// Data inicial das informações contidas no arquivo.
             /// </summary>
-            public string N04_DT_INI
+            public DateTime N04_DT_INI
             {
                 get { return DT_INI; }
                 set { DT_INI = value; }
             }
 
-            private string DT_FIN = "";
+            private DateTime DT_FIN;
             /// <summary>
             /// Data final das informações contidas no arquivo.
             /// </summary>
-            public string N05_DT_FIN
+            public DateTime N05_DT_FIN
             {
                 get { return DT_FIN; }
                 set { DT_FIN = value; }
@@ -195,12 +195,12 @@ namespace EvoluzeSped.Model.Registros
                         return "Erro -> O campo COD_FIN possui valores pré-definidos";
                     }
                     /* validacao para o tamanho do campo DT_INI */
-                    if (DT_INI.Length > 8)
+                    if (DT_INI.ToString().Length > 8)
                     {
                         return "Erro -> Tamanho do campo de DT_INI incorreto(a)";
                     }
                     /* validacao para a obrigatoriedade do campo DT_INI */
-                    if (DT_INI.Trim().Trim().Equals(""))
+                    if (DT_INI.ToString().Trim().Trim().Equals(""))
                     {
                         return "Erro -> Campo Obrigatório DT_INI não informado(a)";
                     }
@@ -311,7 +311,7 @@ namespace EvoluzeSped.Model.Registros
                     DateTime dataFim;
                     try
                     {
-                        dataInicio = DateTime.ParseExact(N04_DT_INI, "ddMMyyyy", System.Globalization.CultureInfo.CurrentCulture);
+                        dataInicio = DateTime.ParseExact(N04_DT_INI.ToString(), "ddMMyyyy", System.Globalization.CultureInfo.CurrentCulture);
                     }
                     catch (Exception)
                     {

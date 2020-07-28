@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Windows.Forms;
 
 namespace EvoluzeSped.Controller.Blocos
 {
@@ -18,11 +19,18 @@ namespace EvoluzeSped.Controller.Blocos
             int i = 1;
             var tipo = registro.GetType();
             PropertyInfo[] properties = tipo.GetProperties();
-            foreach (var propertyInfo in properties)
+            foreach (var objPropertyInfo in properties)
             {
-                propertyInfo.SetValue(registro, array[i++]);
+                switch (objPropertyInfo.PropertyType.Name)
+                {
+                    case "DateTime":
+                        objPropertyInfo.SetValue(registro, util.StringToDate(array[i++]));
+                        break;
+                    default:
+                        objPropertyInfo.SetValue(registro, array[i++]);
+                        break;
+                }
             }
-
             return registro;
 
         }
@@ -54,9 +62,19 @@ namespace EvoluzeSped.Controller.Blocos
                 ++linha;
 
                 var coluna = 1;
-                foreach (var obj in tipo.GetProperties())
+                foreach (var objPropertyInfo in tipo.GetProperties())
                 {
-                    ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(obj.GetValue(registro));
+
+                    switch (objPropertyInfo.PropertyType.Name)
+                    {
+                        case "DateTime":
+                            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(util.DateToStringExcel((DateTime)objPropertyInfo.GetValue(registro)));
+                            break;
+                        default:
+                            ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(objPropertyInfo.GetValue(registro));
+                            break;
+
+                    }   
                 }
 
 
@@ -101,11 +119,19 @@ namespace EvoluzeSped.Controller.Blocos
                     ++linha;
 
                     var coluna = 1;
-                    foreach (var obj in tipo.GetProperties())
+                    foreach (var objPropertyInfo in tipo.GetProperties())
                     {
-                        ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(obj.GetValue(registro));
-                    }
+                        switch (objPropertyInfo.PropertyType.Name)
+                        {
+                            case "DateTime":
+                                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(util.DateToStringExcel((DateTime)objPropertyInfo.GetValue(registro)));
+                                break;
+                            default:
+                                ws.Cell(listaTabelaExcel[coluna++] + linha).SetValue(objPropertyInfo.GetValue(registro));
+                                break;
 
+                        }
+                    }
                 }
 
 
@@ -120,12 +146,7 @@ namespace EvoluzeSped.Controller.Blocos
                 ws.Columns("1-" + listaProriedades.Count).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
 
             }
-
-
             return workBook;
-
         }
-    
     }
-       
 }

@@ -35,31 +35,31 @@ namespace EvoluzeSped
             }
         }
 
-        public DateTime StringToData(string dataString)
+        public DateTime StringToDate(string dataString)
         {
+            /*
             int ano = int.Parse(dataString.Substring(4, 4));
             int mes = int.Parse(dataString.Substring(2, 2));
             int dia = int.Parse(dataString.Substring(0, 2));
             string novaData = dia + "/" + mes + "/" + ano;
 
-            DateTime data = new DateTime(ano, mes, dia);
+            //DateTime data = new DateTime(ano, mes, dia);
+            DateTime data = DateTime.ParseExact(dataString, "ddMMyyyy", System.Globalization.CultureInfo.CurrentCulture);
 
 
             DateTime minhadata = Convert.ToDateTime(novaData);
             Console.WriteLine("Mes: " + minhadata.Month.ToString());
             Console.WriteLine("Ano: " + minhadata.Year.ToString());
 
-            return data;
+            //DateTime.ParseExact(N04_DT_INI.ToString(), "ddMMyyyy", System.Globalization.CultureInfo.CurrentCulture);
+            */
+            return DateTime.ParseExact(dataString, "ddMMyyyy", System.Globalization.CultureInfo.CurrentCulture);
         }
 
-        public string DeteToStringExcel(DateTime objData)
+        public string DateToStringExcel(DateTime objData)
         {
-            int ano = objData.Year;
-            int mes = objData.Year;
-            int dia = objData.Year;
-            string novaData = dia + "/" + mes + "/" + ano;
-
-            return novaData;
+            string novadata = objData.ToString("dd/MM/yyyy"); ;
+            return novadata;
         }
 
         public Dictionary<int, string> TabelExel()

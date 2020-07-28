@@ -52,6 +52,7 @@ namespace EvoluzeSped.Controller.Output
         {
             processaBloco0(sped.Bloco0);
             processaBloco1(sped.Bloco1);
+            processaBlocoB(sped.BlocoB);
             processaBloco9(sped.Bloco9);
         }
 
@@ -119,6 +120,24 @@ namespace EvoluzeSped.Controller.Output
             controller.GetRegistroExcelList(wb, new List<object>(bloco.Registro1975List));
             controller.GetRegistroExcelList(wb, new List<object>(bloco.Registro1980List));
             controller.GetRegistroExcel(wb, bloco.Registro1990);
+        }
+
+        private void processaBlocoB(BlocoB bloco)
+        {
+            controller.GetRegistroExcel(wb, bloco.RegistroB001);
+            
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroB020List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroB025List));
+            //controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroB030List));
+            //controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroB035List));
+            //controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroB350List));
+            //controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroB420List));
+            //controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroB440List));
+            //controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroB460List));
+            //controller.GetRegistroExcel(wb, bloco.RegistroB470);
+            //controller.GetRegistroExcel(wb, bloco.RegistroB500);
+            //controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroB510List));
+            controller.GetRegistroExcel(wb, bloco.RegistroB990);
         }
 
         private void processaBloco9(Bloco9 bloco)

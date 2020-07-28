@@ -67,7 +67,6 @@
   <ItemGroup>
     <Compile Include="Controller\Blocos\ControllerBlocos.cs" />
     <Compile Include="Controller\Input\Input_EFD_ICMS_IPI_Controller.cs" />
-    <None Include="Controller\Arquivos\Sped_EFD_ICMS_IPI_Controller.cs.old" />
     <Compile Include="Controller\Output\Output_EFD_ICMS_IPI_Controller.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -80,9 +79,11 @@
     <Compile Include="Model\Blocos\Bloco0.cs" />
     <Compile Include="Model\Blocos\Bloco1.cs" />
     <Compile Include="Model\Blocos\Bloco9.cs" />
+    <Compile Include="Model\Blocos\BlocoB.cs" />
     <Compile Include="Model\Registros\RegistroBloco0.cs" />
     <Compile Include="Model\Registros\RegistroBloco1.cs" />
     <Compile Include="Model\Registros\RegistroBloco9.cs" />
+    <Compile Include="Model\Registros\RegistroBlocoB.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util.cs" />
@@ -115,6 +116,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="redme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\Arquivos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

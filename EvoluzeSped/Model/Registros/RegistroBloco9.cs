@@ -16,7 +16,7 @@ namespace EvoluzeSped.Model.Registros
             /// <summary>
             /// Texto fixo contendo “9001”.
             /// </summary>
-            private string F_REG = "9001";
+            private string F_REG = "";
             public string N01_REG
             {
                 get { return F_REG; }
@@ -75,7 +75,7 @@ namespace EvoluzeSped.Model.Registros
             /// <summary>
             /// Texto fixo contendo “9900”.
             /// </summary>
-            private string F_REG = "9900";
+            private string F_REG = "";
             public string N01_REG
             {
                 get { return F_REG; }
@@ -149,7 +149,7 @@ namespace EvoluzeSped.Model.Registros
             /// <summary>
             /// Texto fixo contendo “9990”.
             /// </summary>
-            private string F_REG = "9990";
+            private string F_REG = "";
             public string N01_REG
             {
                 get { return F_REG; }
@@ -203,7 +203,7 @@ namespace EvoluzeSped.Model.Registros
             /// <summary>
             /// Texto fixo contendo “9999”.
             /// </summary>
-            private string F_REG = "9999";
+            private string F_REG = "";
             public string N01_REG
             {
                 get { return F_REG; }

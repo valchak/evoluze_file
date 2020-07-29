@@ -87,7 +87,11 @@
     <Compile Include="Model\Registros\RegistroBloco9.cs" />
     <Compile Include="Model\Registros\RegistroBlocoB.cs" />
     <Compile Include="Model\Registros\RegistroBlocoC.cs" />
-    <Compile Include="Model\Registros\RegistroBolocD.cs" />
+    <Compile Include="Model\Registros\RegistroBlocoE.cs" />
+    <Compile Include="Model\Registros\RegistroBlocoD.cs" />
+    <Compile Include="Model\Registros\RegistroBlocoG.cs" />
+    <Compile Include="Model\Registros\RegistroBlocoK.cs" />
+    <Compile Include="Model\Registros\RegistroBlocoH.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util.cs" />

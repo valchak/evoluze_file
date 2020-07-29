@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EvoluzeSped.Model.Registros
 {
-    public class RegistroBolocD
+    public class RegistroBlocoD
     {
         // REGISTRO D001: ABERTURA DO BLOCO D
         public class Registro_D001

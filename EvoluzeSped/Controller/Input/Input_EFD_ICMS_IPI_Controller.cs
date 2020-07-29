@@ -13,7 +13,7 @@ using static EvoluzeSped.Model.Registros.RegistroBloco1;
 using static EvoluzeSped.Model.Registros.RegistroBloco9;
 using static EvoluzeSped.Model.Registros.RegistroBlocoB;
 using static EvoluzeSped.Model.Registros.RegistroBlocoC;
-using static EvoluzeSped.Model.Registros.RegistroBolocD;
+using static EvoluzeSped.Model.Registros.RegistroBlocoD;
 
 namespace EvoluzeSped.Controller.Input
 {

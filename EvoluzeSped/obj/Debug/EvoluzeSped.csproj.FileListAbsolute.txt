@@ -16,3 +16,4 @@ C:\Users\Valchak\Documents\GitHub\evoluze_file\EvoluzeSped\obj\Debug\EvoluzeSped
 C:\Users\Valchak\Documents\GitHub\evoluze_file\EvoluzeSped\obj\Debug\EvoluzeSped.csproj.CopyComplete
 C:\Users\Valchak\Documents\GitHub\evoluze_file\EvoluzeSped\obj\Debug\EvoluzeSped.exe
 C:\Users\Valchak\Documents\GitHub\evoluze_file\EvoluzeSped\obj\Debug\EvoluzeSped.pdb
+C:\Users\Valchak\Documents\GitHub\evoluze_file\EvoluzeSped\obj\Debug\EvoluzeSped.csprojAssemblyReference.cache

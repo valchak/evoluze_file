@@ -13,6 +13,7 @@ using static EvoluzeSped.Model.Registros.RegistroBloco1;
 using static EvoluzeSped.Model.Registros.RegistroBloco9;
 using static EvoluzeSped.Model.Registros.RegistroBlocoB;
 using static EvoluzeSped.Model.Registros.RegistroBlocoC;
+using static EvoluzeSped.Model.Registros.RegistroBolocD;
 
 namespace EvoluzeSped.Controller.Input
 {
@@ -65,7 +66,7 @@ namespace EvoluzeSped.Controller.Input
                     processaBlocoC(array[1], linha);
                     break;
                 case "D":
-//                    processaBlocoD(array[1], linha);
+                    processaBlocoD(array[1], linha);
                     break;
                 case "E":
 //                    processaBlocoE(array[1], linha);
@@ -549,6 +550,134 @@ namespace EvoluzeSped.Controller.Input
                     break;
             }
         }
+
+        private void processaBlocoD(string registro, string linha)
+        {
+            switch (registro)
+            {
+                case "D001": 
+                    sped.BlocoD.RegistroD001 = (Registro_D001)controller.GetRegistro(linha, new Registro_D001()); 
+                    break;
+                case "D100": 
+                    sped.BlocoD.RegistroD100List.Add((Registro_D100)controller.GetRegistro(linha, new Registro_D100())); 
+                    break;
+                case "D101": 
+                    sped.BlocoD.RegistroD101List.Add((Registro_D101)controller.GetRegistro(linha, new Registro_D101())); 
+                    break;
+                case "D110": 
+                    sped.BlocoD.RegistroD110List.Add((Registro_D110)controller.GetRegistro(linha, new Registro_D110())); 
+                    break;
+                case "D120": 
+                    sped.BlocoD.RegistroD120List.Add((Registro_D120)controller.GetRegistro(linha, new Registro_D120())); 
+                    break;
+                case "D130": 
+                    sped.BlocoD.RegistroD130List.Add((Registro_D130)controller.GetRegistro(linha, new Registro_D130())); 
+                    break;
+                case "D140": 
+                    sped.BlocoD.RegistroD140List.Add((Registro_D140)controller.GetRegistro(linha, new Registro_D140())); 
+                    break;
+                case "D150": 
+                    sped.BlocoD.RegistroD150List.Add((Registro_D150)controller.GetRegistro(linha, new Registro_D150())); 
+                    break;
+                case "D160": 
+                    sped.BlocoD.RegistroD160List.Add((Registro_D160)controller.GetRegistro(linha, new Registro_D160())); 
+                    break;
+                case "D161": 
+                    sped.BlocoD.RegistroD161List.Add((Registro_D161)controller.GetRegistro(linha, new Registro_D161())); 
+                    break;
+                case "D162": 
+                    sped.BlocoD.RegistroD162List.Add((Registro_D162)controller.GetRegistro(linha, new Registro_D162())); 
+                    break;
+                case "D170": 
+                    sped.BlocoD.RegistroD170List.Add((Registro_D170)controller.GetRegistro(linha, new Registro_D170())); 
+                    break;
+                case "D180": 
+                    sped.BlocoD.RegistroD180List.Add((Registro_D180)controller.GetRegistro(linha, new Registro_D180())); 
+                    break;
+                case "D190": 
+                    sped.BlocoD.RegistroD190List.Add((Registro_D190)controller.GetRegistro(linha, new Registro_D190())); 
+                    break;
+                case "D195": 
+                    sped.BlocoD.RegistroD195List.Add((Registro_D195)controller.GetRegistro(linha, new Registro_D195())); 
+                    break;
+                case "D197": 
+                    sped.BlocoD.RegistroD197List.Add((Registro_D197)controller.GetRegistro(linha, new Registro_D197())); 
+                    break;
+                case "D300": 
+                    sped.BlocoD.RegistroD300List.Add((Registro_D300)controller.GetRegistro(linha, new Registro_D300())); 
+                    break;
+                case "D301": 
+                    sped.BlocoD.RegistroD301List.Add((Registro_D301)controller.GetRegistro(linha, new Registro_D301())); 
+                    break;
+                case "D310": 
+                    sped.BlocoD.RegistroD310List.Add((Registro_D310)controller.GetRegistro(linha, new Registro_D310())); 
+                    break;
+                case "D350": 
+                    sped.BlocoD.RegistroD350List.Add((Registro_D350)controller.GetRegistro(linha, new Registro_D350())); 
+                    break;
+                case "D355": 
+                    sped.BlocoD.RegistroD355List.Add((Registro_D355)controller.GetRegistro(linha, new Registro_D355())); 
+                    break;
+                case "D360": 
+                    sped.BlocoD.RegistroD360List.Add((Registro_D360)controller.GetRegistro(linha, new Registro_D360())); 
+                    break;
+                case "D365": 
+                    sped.BlocoD.RegistroD365List.Add((Registro_D365)controller.GetRegistro(linha, new Registro_D365())); 
+                    break;
+                case "D370": 
+                    sped.BlocoD.RegistroD370List.Add((Registro_D370)controller.GetRegistro(linha, new Registro_D370())); 
+                    break;
+                case "D390": 
+                    sped.BlocoD.RegistroD390List.Add((Registro_D390)controller.GetRegistro(linha, new Registro_D390())); 
+                    break;
+                case "D400": 
+                    sped.BlocoD.RegistroD400List.Add((Registro_D400)controller.GetRegistro(linha, new Registro_D400()));
+                    break;
+                case "D410": 
+                    sped.BlocoD.RegistroD410List.Add((Registro_D410)controller.GetRegistro(linha, new Registro_D410())); 
+                    break;
+                case "D411": 
+                    sped.BlocoD.RegistroD411List.Add((Registro_D411)controller.GetRegistro(linha, new Registro_D411()));
+                    break;
+                case "D420": 
+                    sped.BlocoD.RegistroD420List.Add((Registro_D420)controller.GetRegistro(linha, new Registro_D420())); 
+                    break;
+                case "D500": 
+                    sped.BlocoD.RegistroD500List.Add((Registro_D500)controller.GetRegistro(linha, new Registro_D500())); 
+                    break;
+                case "D510": 
+                    sped.BlocoD.RegistroD510List.Add((Registro_D510)controller.GetRegistro(linha, new Registro_D510())); 
+                    break;
+                case "D530": 
+                    sped.BlocoD.RegistroD530List.Add((Registro_D530)controller.GetRegistro(linha, new Registro_D530())); 
+                    break;
+                case "D590": 
+                    sped.BlocoD.RegistroD590List.Add((Registro_D590)controller.GetRegistro(linha, new Registro_D590()));
+                    break;
+                case "D600": 
+                    sped.BlocoD.RegistroD600List.Add((Registro_D600)controller.GetRegistro(linha, new Registro_D600()));
+                    break;
+                case "D610": 
+                    sped.BlocoD.RegistroD610List.Add((Registro_D610)controller.GetRegistro(linha, new Registro_D610())); 
+                    break;
+                case "D690": 
+                    sped.BlocoD.RegistroD690List.Add((Registro_D690)controller.GetRegistro(linha, new Registro_D690())); 
+                    break;
+                case "D695": 
+                    sped.BlocoD.RegistroD695List.Add((Registro_D695)controller.GetRegistro(linha, new Registro_D695()));
+                    break;
+                case "D696": 
+                    sped.BlocoD.RegistroD696List.Add((Registro_D696)controller.GetRegistro(linha, new Registro_D696())); 
+                    break;
+                case "D697": 
+                    sped.BlocoD.RegistroD697List.Add((Registro_D697)controller.GetRegistro(linha, new Registro_D697())); 
+                    break;
+                case "D990": 
+                    sped.BlocoD.RegistroD990 = (Registro_D990)controller.GetRegistro(linha, new Registro_D990());
+                    break;
+            }
+        }
+
         private void processaBloco9(string registro, string linha)
         {
             switch (registro)
@@ -641,45 +770,8 @@ namespace EvoluzeSped.Controller.Input
                          }
                      }
 
-                     private void processaBlocoD(string registro, string linha)
-                     {
-                         switch (registro)
-                         {
-                             case "D001":
-                                 sped.BlocoD.RegistroD001 = controller.BlocoD.GetRegistroD001(linha);
-                                 break;
-                             case "D500":
-                                 sped.BlocoD.RegistroD500List.Add(controller.BlocoD.GetRegistroD500(linha));
-                                 break;
-                             case "D590":
-                                 sped.BlocoD.RegistroD590List.Add(controller.BlocoD.GetRegistroD590(linha));
-                                 break;
-                             case "D990":
-                                 sped.BlocoD.RegistroD990 = controller.BlocoD.GetRegistroD990(linha);
-                                 break;
-                         }
-                     }
-
                      
 
-                     private void processaBlocoB(string registro, string linha)
-                     {
-                         switch (registro)
-                         {
-                             case "B001":
-                                 sped.BlocoB.RegistroB001 = controller.BlocoB.GetRegistroB001(linha);
-                                 break;
-                             case "B990":
-                                 sped.BlocoB.RegistroB990 = controller.BlocoB.GetRegistroB990(linha);
-                                 break;
-                         }
-                     }
-
-                     public void addListaRegistro(string key, int value)
-                     {
-                         //listRegistros.Remove(key);
-                         //listRegistros.Add(key, value);
-                     }
              */
 
     }

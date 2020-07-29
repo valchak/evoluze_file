@@ -81,11 +81,13 @@
     <Compile Include="Model\Blocos\Bloco9.cs" />
     <Compile Include="Model\Blocos\BlocoB.cs" />
     <Compile Include="Model\Blocos\BlocoC.cs" />
+    <Compile Include="Model\Blocos\BlocoD.cs" />
     <Compile Include="Model\Registros\RegistroBloco0.cs" />
     <Compile Include="Model\Registros\RegistroBloco1.cs" />
     <Compile Include="Model\Registros\RegistroBloco9.cs" />
     <Compile Include="Model\Registros\RegistroBlocoB.cs" />
     <Compile Include="Model\Registros\RegistroBlocoC.cs" />
+    <Compile Include="Model\Registros\RegistroBolocD.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util.cs" />

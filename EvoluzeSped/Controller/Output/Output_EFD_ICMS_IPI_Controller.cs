@@ -160,7 +160,7 @@ namespace EvoluzeSped.Controller.Output
             controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroC141List));
             controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroC160List));
             controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroC165List));
-            //controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroC170List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroC170List));
             controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroC171List));
             controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroC172List));
             controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroC173List));

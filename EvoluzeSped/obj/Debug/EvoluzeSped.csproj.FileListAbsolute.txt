@@ -9,7 +9,6 @@ C:\Users\Valchak\Documents\GitHub\evoluze_file\EvoluzeSped\bin\Debug\ClosedXML.p
 C:\Users\Valchak\Documents\GitHub\evoluze_file\EvoluzeSped\bin\Debug\ClosedXML.xml
 C:\Users\Valchak\Documents\GitHub\evoluze_file\EvoluzeSped\bin\Debug\DocumentFormat.OpenXml.xml
 C:\Users\Valchak\Documents\GitHub\evoluze_file\EvoluzeSped\bin\Debug\ExcelNumberFormat.xml
-C:\Users\Valchak\Documents\GitHub\evoluze_file\EvoluzeSped\obj\Debug\EvoluzeSped.csprojAssemblyReference.cache
 C:\Users\Valchak\Documents\GitHub\evoluze_file\EvoluzeSped\obj\Debug\EvoluzeSped.Main.resources
 C:\Users\Valchak\Documents\GitHub\evoluze_file\EvoluzeSped\obj\Debug\EvoluzeSped.Properties.Resources.resources
 C:\Users\Valchak\Documents\GitHub\evoluze_file\EvoluzeSped\obj\Debug\EvoluzeSped.csproj.GenerateResource.cache

@@ -451,9 +451,9 @@ namespace EvoluzeSped.Model.Registros
                 N30_VL_PIS = "";
                 N31_CST_COFINS = "";
                 N32_VL_BC_COFINS = "";
-                N33_ALIQ_COFINS = "";
+                N33_ALIQ_COFINS_PERCENTUAL = "";
                 N34_QUANT_BC_COFINS = "";
-                N35_ALIQ_COFINS = "";
+                N35_ALIQ_COFINS_REAIS = "";
                 N36_VL_COFINS = "";
                 N37_COD_CTA = "";
                 N38_VL_ABAT_NT = "";
@@ -490,9 +490,9 @@ namespace EvoluzeSped.Model.Registros
             public string N30_VL_PIS { get; set; }
             public string N31_CST_COFINS { get; set; }
             public string N32_VL_BC_COFINS { get; set; }
-            public string N33_ALIQ_COFINS { get; set; }
+            public string N33_ALIQ_COFINS_PERCENTUAL { get; set; }
             public string N34_QUANT_BC_COFINS { get; set; }
-            public string N35_ALIQ_COFINS { get; set; }
+            public string N35_ALIQ_COFINS_REAIS { get; set; }
             public string N36_VL_COFINS { get; set; }
             public string N37_COD_CTA { get; set; }
             public string N38_VL_ABAT_NT { get; set; }
@@ -2105,7 +2105,6 @@ namespace EvoluzeSped.Model.Registros
             {
                 N01_REG = "";
                 N02_QTD_LIN_C = "";
-
             }
             public string N01_REG { get; set; }
             public string N02_QTD_LIN_C { get; set; }

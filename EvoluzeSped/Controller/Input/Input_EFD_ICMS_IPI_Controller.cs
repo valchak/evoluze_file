@@ -12,6 +12,7 @@ using static EvoluzeSped.Model.Registros.RegistroBloco0;
 using static EvoluzeSped.Model.Registros.RegistroBloco1;
 using static EvoluzeSped.Model.Registros.RegistroBloco9;
 using static EvoluzeSped.Model.Registros.RegistroBlocoB;
+using static EvoluzeSped.Model.Registros.RegistroBlocoC;
 
 namespace EvoluzeSped.Controller.Input
 {
@@ -61,7 +62,7 @@ namespace EvoluzeSped.Controller.Input
                     processaBlocoB(array[1], linha);
                     break;
                 case "C":
-//                    processaBlocoC(array[1], linha);
+                    processaBlocoC(array[1], linha);
                     break;
                 case "D":
 //                    processaBlocoD(array[1], linha);
@@ -140,9 +141,7 @@ namespace EvoluzeSped.Controller.Input
                 case "0460":                                         
                     sped.Bloco0.Registro0460List.Add((Registro_0460) controller.GetRegistro(linha, new Registro_0460()));
                     break;
-                case "0500":
-                    sped.Bloco0.Registro0500List.Add((Registro_0500) controller.GetRegistro(linha, new Registro_0500()));
-                    break;
+                case "0500": sped.Bloco0.Registro0500List.Add((Registro_0500) controller.GetRegistro(linha, new Registro_0500())); break;
                 case "0600":
                     sped.Bloco0.Registro0600List.Add((Registro_0600) controller.GetRegistro(linha, new Registro_0600()));
                     break;
@@ -284,31 +283,31 @@ namespace EvoluzeSped.Controller.Input
                     sped.BlocoB.RegistroB025List.Add((Registro_B025) controller.GetRegistro(linha, new Registro_B025()));
                     break;
                 case "B030":
-                    //sped.BlocoB.RegistroB030List.Add((Registro_B030) controller.GetRegistro(linha, new Registro_B030()));
+                    sped.BlocoB.RegistroB030List.Add((Registro_B030) controller.GetRegistro(linha, new Registro_B030()));
                     break;
                 case "B035":
-                    //sped.BlocoB.RegistroB035List.Add((Registro_B035) controller.GetRegistro(linha, new Registro_B035()));
+                    sped.BlocoB.RegistroB035List.Add((Registro_B035) controller.GetRegistro(linha, new Registro_B035()));
                     break;
                 case "B350":
-                    //sped.BlocoB.RegistroB350List.Add((Registro_B350) controller.GetRegistro(linha, new Registro_B350()));
+                    sped.BlocoB.RegistroB350List.Add((Registro_B350) controller.GetRegistro(linha, new Registro_B350()));
                     break;
                 case "B420":
-                    //sped.BlocoB.RegistroB420List.Add((Registro_B420) controller.GetRegistro(linha, new Registro_B420()));
+                    sped.BlocoB.RegistroB420List.Add((Registro_B420) controller.GetRegistro(linha, new Registro_B420()));
                     break;
                 case "B440":
-                    //sped.BlocoB.RegistroB440List.Add((Registro_B440) controller.GetRegistro(linha, new Registro_B440()));
+                    sped.BlocoB.RegistroB440List.Add((Registro_B440) controller.GetRegistro(linha, new Registro_B440()));
                     break;
                 case "B460":
-                    //sped.BlocoB.RegistroB460List.Add((Registro_B460) controller.GetRegistro(linha, new Registro_B460()));
+                    sped.BlocoB.RegistroB460List.Add((Registro_B460) controller.GetRegistro(linha, new Registro_B460()));
                     break;
                 case "B470":
-                    //sped.BlocoB.RegistroB470 = (Registro_B470) controller.GetRegistro(linha, new Registro_B470());
+                    sped.BlocoB.RegistroB470 = (Registro_B470) controller.GetRegistro(linha, new Registro_B470());
                     break;
                 case "B500":
-                    //sped.BlocoB.RegistroB500 = (Registro_B500) controller.GetRegistro(linha, new Registro_B500());
+                    sped.BlocoB.RegistroB500 = (Registro_B500) controller.GetRegistro(linha, new Registro_B500());
                     break;
                 case "B510":
-                    //sped.BlocoB.RegistroB510List.Add((Registro_B510) controller.GetRegistro(linha, new Registro_B510()));
+                    sped.BlocoB.RegistroB510List.Add((Registro_B510) controller.GetRegistro(linha, new Registro_B510()));
                     break;
                 case "B990":
                     sped.BlocoB.RegistroB990 = (Registro_B990) controller.GetRegistro(linha, new Registro_B990());
@@ -316,6 +315,240 @@ namespace EvoluzeSped.Controller.Input
             }
         }
 
+        private void processaBlocoC(string registro, string linha)
+        {
+            switch (registro)
+            {
+                case "C001": 
+                    sped.BlocoC.RegistroC001 = (Registro_C001)controller.GetRegistro(linha, new Registro_C001()); 
+                    break;
+                case "C100": 
+                    sped.BlocoC.RegistroC100List.Add((Registro_C100)controller.GetRegistro(linha, new Registro_C100())); 
+                    break;
+                case "C101": 
+                    sped.BlocoC.RegistroC101List.Add((Registro_C101)controller.GetRegistro(linha, new Registro_C101())); 
+                    break;
+                case "C105": 
+                    sped.BlocoC.RegistroC105List.Add((Registro_C105)controller.GetRegistro(linha, new Registro_C105())); 
+                    break;
+                case "C110": 
+                    sped.BlocoC.RegistroC110List.Add((Registro_C110)controller.GetRegistro(linha, new Registro_C110())); 
+                    break;
+                case "C111": 
+                    sped.BlocoC.RegistroC111List.Add((Registro_C111)controller.GetRegistro(linha, new Registro_C111())); 
+                    break;
+                case "C112": 
+                    sped.BlocoC.RegistroC112List.Add((Registro_C112)controller.GetRegistro(linha, new Registro_C112())); 
+                    break;
+                case "C113": 
+                    sped.BlocoC.RegistroC113List.Add((Registro_C113)controller.GetRegistro(linha, new Registro_C113())); 
+                    break;
+                case "C114": 
+                    sped.BlocoC.RegistroC114List.Add((Registro_C114)controller.GetRegistro(linha, new Registro_C114())); 
+                    break;
+                case "C115": 
+                    sped.BlocoC.RegistroC115List.Add((Registro_C115)controller.GetRegistro(linha, new Registro_C115())); 
+                    break;
+                case "C116": 
+                    sped.BlocoC.RegistroC116List.Add((Registro_C116)controller.GetRegistro(linha, new Registro_C116())); 
+                    break;
+                case "C120": 
+                    sped.BlocoC.RegistroC120List.Add((Registro_C120)controller.GetRegistro(linha, new Registro_C120())); 
+                    break;
+                case "C130": 
+                    sped.BlocoC.RegistroC130List.Add((Registro_C130)controller.GetRegistro(linha, new Registro_C130())); 
+                    break;
+                case "C140": 
+                    sped.BlocoC.RegistroC140List.Add((Registro_C140)controller.GetRegistro(linha, new Registro_C140())); 
+                    break;
+                case "C141": 
+                    sped.BlocoC.RegistroC141List.Add((Registro_C141)controller.GetRegistro(linha, new Registro_C141())); 
+                    break;
+                case "C160": 
+                    sped.BlocoC.RegistroC160List.Add((Registro_C160)controller.GetRegistro(linha, new Registro_C160()));
+                    break;
+                case "C165": 
+                    sped.BlocoC.RegistroC165List.Add((Registro_C165)controller.GetRegistro(linha, new Registro_C165())); 
+                    break;
+                case "C170": 
+                    sped.BlocoC.RegistroC170List.Add((Registro_C170)controller.GetRegistro(linha, new Registro_C170())); 
+                    break;
+                case "C171": 
+                    sped.BlocoC.RegistroC171List.Add((Registro_C171)controller.GetRegistro(linha, new Registro_C171())); 
+                    break;
+                case "C172": 
+                    sped.BlocoC.RegistroC172List.Add((Registro_C172)controller.GetRegistro(linha, new Registro_C172())); 
+                    break;
+                case "C173": 
+                    sped.BlocoC.RegistroC173List.Add((Registro_C173)controller.GetRegistro(linha, new Registro_C173())); 
+                    break;
+                case "C174": 
+                    sped.BlocoC.RegistroC174List.Add((Registro_C174)controller.GetRegistro(linha, new Registro_C174())); 
+                    break;
+                case "C175": 
+                    sped.BlocoC.RegistroC175List.Add((Registro_C175)controller.GetRegistro(linha, new Registro_C175())); 
+                    break;
+                case "C176": 
+                    sped.BlocoC.RegistroC176List.Add((Registro_C176)controller.GetRegistro(linha, new Registro_C176())); 
+                    break;
+                case "C177": 
+                    sped.BlocoC.RegistroC177List.Add((Registro_C177)controller.GetRegistro(linha, new Registro_C177())); 
+                    break;
+                case "C178": 
+                    sped.BlocoC.RegistroC178List.Add((Registro_C178)controller.GetRegistro(linha, new Registro_C178())); 
+                    break;
+                case "C179": 
+                    sped.BlocoC.RegistroC179List.Add((Registro_C179)controller.GetRegistro(linha, new Registro_C179())); 
+                    break;
+                case "C180": 
+                    sped.BlocoC.RegistroC180List.Add((Registro_C180)controller.GetRegistro(linha, new Registro_C180())); 
+                    break;
+                case "C185": 
+                    sped.BlocoC.RegistroC185List.Add((Registro_C185)controller.GetRegistro(linha, new Registro_C185())); 
+                    break;
+                case "C190": 
+                    sped.BlocoC.RegistroC190List.Add((Registro_C190)controller.GetRegistro(linha, new Registro_C190())); 
+                    break;
+                case "C191": 
+                    sped.BlocoC.RegistroC191List.Add((Registro_C191)controller.GetRegistro(linha, new Registro_C191())); 
+                    break;
+                case "C195": 
+                    sped.BlocoC.RegistroC195List.Add((Registro_C195)controller.GetRegistro(linha, new Registro_C195())); 
+                    break;
+                case "C197": 
+                    sped.BlocoC.RegistroC197List.Add((Registro_C197)controller.GetRegistro(linha, new Registro_C197())); 
+                    break;
+                case "C300": 
+                    sped.BlocoC.RegistroC300List.Add((Registro_C300)controller.GetRegistro(linha, new Registro_C300())); 
+                    break;
+                case "C310": 
+                    sped.BlocoC.RegistroC310List.Add((Registro_C310)controller.GetRegistro(linha, new Registro_C310())); 
+                    break;
+                case "C320": 
+                    sped.BlocoC.RegistroC320List.Add((Registro_C320)controller.GetRegistro(linha, new Registro_C320())); 
+                    break;
+                case "C321": 
+                    sped.BlocoC.RegistroC321List.Add((Registro_C321)controller.GetRegistro(linha, new Registro_C321())); 
+                    break;
+                case "C330": 
+                    sped.BlocoC.RegistroC330List.Add((Registro_C330)controller.GetRegistro(linha, new Registro_C330())); 
+                    break;
+                case "C350": 
+                    sped.BlocoC.RegistroC350List.Add((Registro_C350)controller.GetRegistro(linha, new Registro_C350())); 
+                    break;
+                case "C370": 
+                    sped.BlocoC.RegistroC370List.Add((Registro_C370)controller.GetRegistro(linha, new Registro_C370())); 
+                    break;
+                case "C380": 
+                    sped.BlocoC.RegistroC380List.Add((Registro_C380)controller.GetRegistro(linha, new Registro_C380())); 
+                    break;
+                case "C390": 
+                    sped.BlocoC.RegistroC390List.Add((Registro_C390)controller.GetRegistro(linha, new Registro_C390())); 
+                    break;
+                case "C400": 
+                    sped.BlocoC.RegistroC400List.Add((Registro_C400)controller.GetRegistro(linha, new Registro_C400()));
+                    break;
+                case "C405": 
+                    sped.BlocoC.RegistroC405List.Add((Registro_C405)controller.GetRegistro(linha, new Registro_C405()));
+                    break;
+                case "C410": 
+                    sped.BlocoC.RegistroC410List.Add((Registro_C410)controller.GetRegistro(linha, new Registro_C410()));
+                    break;
+                case "C420": 
+                    sped.BlocoC.RegistroC420List.Add((Registro_C420)controller.GetRegistro(linha, new Registro_C420()));
+                    break;
+                case "C425": 
+                    sped.BlocoC.RegistroC425List.Add((Registro_C425)controller.GetRegistro(linha, new Registro_C425()));
+                    break;
+                case "C430": 
+                    sped.BlocoC.RegistroC430List.Add((Registro_C430)controller.GetRegistro(linha, new Registro_C430()));
+                    break;
+                case "C460": 
+                    sped.BlocoC.RegistroC460List.Add((Registro_C460)controller.GetRegistro(linha, new Registro_C460()));
+                    break;
+                case "C465": 
+                    sped.BlocoC.RegistroC465List.Add((Registro_C465)controller.GetRegistro(linha, new Registro_C465())); 
+                    break;
+                case "C470": 
+                    sped.BlocoC.RegistroC470List.Add((Registro_C470)controller.GetRegistro(linha, new Registro_C470())); 
+                    break;
+                case "C480": 
+                    sped.BlocoC.RegistroC480List.Add((Registro_C480)controller.GetRegistro(linha, new Registro_C480())); 
+                    break;
+                case "C490": 
+                    sped.BlocoC.RegistroC490List.Add((Registro_C490)controller.GetRegistro(linha, new Registro_C490()));
+                    break;
+                case "C495": 
+                    sped.BlocoC.RegistroC495List.Add((Registro_C495)controller.GetRegistro(linha, new Registro_C495())); 
+                    break;
+                case "C500": 
+                    sped.BlocoC.RegistroC500List.Add((Registro_C500)controller.GetRegistro(linha, new Registro_C500()));
+                    break;
+                case "C510": 
+                    sped.BlocoC.RegistroC510List.Add((Registro_C510)controller.GetRegistro(linha, new Registro_C510()));
+                    break;
+                case "C590": 
+                    sped.BlocoC.RegistroC590List.Add((Registro_C590)controller.GetRegistro(linha, new Registro_C590())); 
+                    break;
+                case "C591": 
+                    sped.BlocoC.RegistroC591List.Add((Registro_C591)controller.GetRegistro(linha, new Registro_C591())); 
+                    break;
+                case "C595": 
+                    sped.BlocoC.RegistroC595List.Add((Registro_C595)controller.GetRegistro(linha, new Registro_C595())); 
+                    break;
+                case "C597": 
+                    sped.BlocoC.RegistroC597List.Add((Registro_C597)controller.GetRegistro(linha, new Registro_C597())); 
+                    break;
+                case "C600": 
+                    sped.BlocoC.RegistroC600List.Add((Registro_C600)controller.GetRegistro(linha, new Registro_C600())); 
+                    break;
+                case "C601": 
+                    sped.BlocoC.RegistroC601List.Add((Registro_C601)controller.GetRegistro(linha, new Registro_C601())); 
+                    break;
+                case "C610": 
+                    sped.BlocoC.RegistroC610List.Add((Registro_C610)controller.GetRegistro(linha, new Registro_C610())); 
+                    break;
+                case "C690": 
+                    sped.BlocoC.RegistroC690List.Add((Registro_C690)controller.GetRegistro(linha, new Registro_C690())); 
+                    break;
+                case "C700": 
+                    sped.BlocoC.RegistroC700List.Add((Registro_C700)controller.GetRegistro(linha, new Registro_C700()));
+                    break;
+                case "C790": 
+                    sped.BlocoC.RegistroC790List.Add((Registro_C790)controller.GetRegistro(linha, new Registro_C790())); 
+                    break;
+                case "C791": 
+                    sped.BlocoC.RegistroC791List.Add((Registro_C791)controller.GetRegistro(linha, new Registro_C791())); 
+                    break;
+                case "C800": 
+                    sped.BlocoC.RegistroC800List.Add((Registro_C800)controller.GetRegistro(linha, new Registro_C800())); 
+                    break;
+                case "C810": 
+                    sped.BlocoC.RegistroC810List.Add((Registro_C810)controller.GetRegistro(linha, new Registro_C810())); 
+                    break;
+                case "C815": 
+                    sped.BlocoC.RegistroC815List.Add((Registro_C815)controller.GetRegistro(linha, new Registro_C815())); 
+                    break;
+                case "C850": 
+                    sped.BlocoC.RegistroC850List.Add((Registro_C850)controller.GetRegistro(linha, new Registro_C850())); 
+                    break;
+                case "C860": 
+                    sped.BlocoC.RegistroC860List.Add((Registro_C860)controller.GetRegistro(linha, new Registro_C860())); 
+                    break;
+                case "C870": 
+                    sped.BlocoC.RegistroC870List.Add((Registro_C870)controller.GetRegistro(linha, new Registro_C870())); 
+                    break;
+                case "C880": 
+                    sped.BlocoC.RegistroC880List.Add((Registro_C880)controller.GetRegistro(linha, new Registro_C880())); 
+                    break;
+                case "C890": 
+                    sped.BlocoC.RegistroC890List.Add((Registro_C890)controller.GetRegistro(linha, new Registro_C890())); 
+                    break;
+                case "C990": 
+                    sped.BlocoC.RegistroC990 = (Registro_C990)controller.GetRegistro(linha, new Registro_C990()); 
+                    break;
+            }
+        }
         private void processaBloco9(string registro, string linha)
         {
             switch (registro)
@@ -427,66 +660,7 @@ namespace EvoluzeSped.Controller.Input
                          }
                      }
 
-                     private void processaBlocoC(string registro, string linha)
-                     {
-                         switch (registro)
-                         {
-                             case "C001":
-                                 sped.BlocoC.RegistroC001 = controller.BlocoC.GetRegistroC001(linha);
-                                 break;
-                             case "C100":
-                                 sped.BlocoC.RegistroC100List.Add(controller.BlocoC.GetRegistroC100(linha));
-                                 break;
-                             case "C110":
-                                 sped.BlocoC.RegistroC110List.Add(controller.BlocoC.GetRegistroC110(linha));
-                                 break;
-                             case "C114":
-                                 sped.BlocoC.RegistroC114List.Add(controller.BlocoC.GetRegistroC114(linha));
-                                 break;
-                             case "C170":
-                                 sped.BlocoC.RegistroC170List.Add(controller.BlocoC.GetRegistroC170(linha));
-                                 break;
-                             case "C171":
-                                 sped.BlocoC.RegistroC171List.Add(controller.BlocoC.GetRegistroC171(linha));
-                                 break;
-                             case "C190":
-                                 sped.BlocoC.RegistroC190List.Add(controller.BlocoC.GetRegistroC190(linha));
-                                 break;
-                             case "C195":
-                                 sped.BlocoC.RegistroC195List.Add(controller.BlocoC.GetRegistroC195(linha));
-                                 break;
-                             case "C197":
-                                 sped.BlocoC.RegistroC197List.Add(controller.BlocoC.GetRegistroC197(linha));
-                                 break;
-                             case "C400":
-                                 sped.BlocoC.RegistroC400List.Add(controller.BlocoC.GetRegistroC400(linha));
-                                 break;
-                             case "C405":
-                                 sped.BlocoC.RegistroC405List.Add(controller.BlocoC.GetRegistroC405(linha));
-                                 break;
-                             case "C410":
-                                 sped.BlocoC.RegistroC410List.Add(controller.BlocoC.GetRegistroC410(linha));
-                                 break;
-                             case "C420":
-                                 sped.BlocoC.RegistroC420List.Add(controller.BlocoC.GetRegistroC420(linha));
-                                 break;
-                             case "C425":
-                                 sped.BlocoC.RegistroC425List.Add(controller.BlocoC.GetRegistroC425(linha));
-                                 break;
-                             case "C490":
-                                 sped.BlocoC.RegistroC490List.Add(controller.BlocoC.GetRegistroC490(linha));
-                                 break;
-                             case "C500":
-                                 sped.BlocoC.RegistroC500List.Add(controller.BlocoC.GetRegistroC500(linha));
-                                 break;
-                             case "C590":
-                                 sped.BlocoC.RegistroC590List.Add(controller.BlocoC.GetRegistroC590(linha));
-                                 break;
-                             case "C990":
-                                 sped.BlocoC.RegistroC990 = controller.BlocoC.GetRegistroC990(linha);
-                                 break;
-                         }
-                     }
+                     
 
                      private void processaBlocoB(string registro, string linha)
                      {

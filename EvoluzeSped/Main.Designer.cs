@@ -34,6 +34,9 @@
             this.btn_EFD_ICMS_IPI = new System.Windows.Forms.Button();
             this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.saveFile = new System.Windows.Forms.SaveFileDialog();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.lbPercentual = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnFileOpen
@@ -76,16 +79,45 @@
             // 
             this.openFile.FileName = "openFile";
             // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(51, 390);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(587, 23);
+            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.progressBar.TabIndex = 11;
+            this.progressBar.Visible = false;
+            // 
+            // backgroundWorker
+            // 
+            this.backgroundWorker.WorkerReportsProgress = true;
+            this.backgroundWorker.WorkerSupportsCancellation = true;
+            this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
+            this.backgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker_ProgressChanged);
+            this.backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker_RunWorkerCompleted);
+            // 
+            // lbPercentual
+            // 
+            this.lbPercentual.AutoSize = true;
+            this.lbPercentual.Location = new System.Drawing.Point(654, 395);
+            this.lbPercentual.Name = "lbPercentual";
+            this.lbPercentual.Size = new System.Drawing.Size(10, 13);
+            this.lbPercentual.TabIndex = 12;
+            this.lbPercentual.Text = " ";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(715, 481);
+            this.Controls.Add(this.lbPercentual);
+            this.Controls.Add(this.progressBar);
             this.Controls.Add(this.btn_EFD_ICMS_IPI);
             this.Controls.Add(this.btnFileOpen);
             this.Controls.Add(this.lbEntrada);
             this.Controls.Add(this.txtFileOpen);
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -100,6 +132,9 @@
         private System.Windows.Forms.Button btn_EFD_ICMS_IPI;
         private System.Windows.Forms.OpenFileDialog openFile;
         private System.Windows.Forms.SaveFileDialog saveFile;
+        private System.Windows.Forms.ProgressBar progressBar;
+        private System.ComponentModel.BackgroundWorker backgroundWorker;
+        private System.Windows.Forms.Label lbPercentual;
     }
 }
 

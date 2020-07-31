@@ -1,19 +1,23 @@
 ﻿using EvoluzeSped.Controller.Blocos;
-using EvoluzeSped.Controller.Output;
-using EvoluzeSped.Model.Arquivos;
-using EvoluzeSped.Model.Registros;
+using EvoluzeSpedFile.Model.Arquivos;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static EvoluzeSped.Model.Registros.RegistroBloco0;
-using static EvoluzeSped.Model.Registros.RegistroBloco1;
-using static EvoluzeSped.Model.Registros.RegistroBloco9;
-using static EvoluzeSped.Model.Registros.RegistroBlocoB;
-using static EvoluzeSped.Model.Registros.RegistroBlocoC;
-using static EvoluzeSped.Model.Registros.RegistroBlocoD;
+using static EvoluzeSpedFile.Model.Registros.RegistroBloco0;
+using static EvoluzeSpedFile.Model.Registros.RegistroBlocoC;
+using static EvoluzeSpedFile.Model.Registros.RegistroBloco1;
+using static EvoluzeSpedFile.Model.Registros.RegistroBlocoB;
+using static EvoluzeSpedFile.Model.Registros.RegistroBlocoD;
+using static EvoluzeSpedFile.Model.Registros.RegistroBloco9;
+using static EvoluzeSpedFile.Model.Registros.RegistroBlocoE;
+using static EvoluzeSpedFile.Model.Registros.RegistroBlocoG;
+using static EvoluzeSpedFile.Model.Registros.RegistroBlocoH;
+using static EvoluzeSpedFile.Model.Registros.RegistroBlocoK;
+using System.Threading;
+using System.Text.RegularExpressions;
 
 namespace EvoluzeSped.Controller.Input
 {
@@ -21,19 +25,24 @@ namespace EvoluzeSped.Controller.Input
     {
         ControllerBlocos controller;
         Sped_EFD_ICMS_IPI sped;
-        
-        public Sped_EFD_ICMS_IPI GetObjetoSped(string localOrigemArquivo)
+        bool finalArquivo = true;
+        public Sped_EFD_ICMS_IPI GetObjetoSped(string arquivo)
         {
             sped = new Sped_EFD_ICMS_IPI();
             controller = new ControllerBlocos();
 
             Queue<string> linhas = new Queue<string>();
             string linha = null;
-            StreamReader reader = new StreamReader(localOrigemArquivo, Encoding.Default);
+            StreamReader reader = new StreamReader(arquivo, Encoding.Default);
+            //Regex rx = new Regex("\r\n");
+            //_Singleton.GetInstance.linhaTotalArquivo = rx.Matches(reader.ReadToEnd()).Count  * 2;
+
             while ((linha = reader.ReadLine()) != null)
             {
-                linhas.Enqueue(linha);
-                validaRegistro(linha);
+                if (finalArquivo) { 
+                    linhas.Enqueue(linha);
+                    validaRegistro(linha);
+                }
             }
             reader.Close();
 
@@ -41,8 +50,6 @@ namespace EvoluzeSped.Controller.Input
             return sped;
 
         }
-
-
         private void validaRegistro(string linha)
         {
             string[] array = linha.Split('|');
@@ -56,9 +63,6 @@ namespace EvoluzeSped.Controller.Input
                 case "1":
                     processaBloco1(array[1], linha);
                     break;
-                case "9":
-                    processaBloco9(array[1], linha);
-                    break;
                 case "B":
                     processaBlocoB(array[1], linha);
                     break;
@@ -69,16 +73,19 @@ namespace EvoluzeSped.Controller.Input
                     processaBlocoD(array[1], linha);
                     break;
                 case "E":
-//                    processaBlocoE(array[1], linha);
+                    processaBlocoE(array[1], linha);
                     break;
                 case "G":
-//                    processaBlocoG(array[1], linha);
+                    processaBlocoG(array[1], linha);
                     break;
                 case "H":
-//                    processaBlocoH(array[1], linha);
+                    processaBlocoH(array[1], linha);
                     break;
                 case "K":
-//                    processaBlocoK(array[1], linha);
+                    processaBlocoK(array[1], linha);
+                    break;
+                case "9":
+                    processaBloco9(array[1], linha);
                     break;
             }
 
@@ -407,7 +414,7 @@ namespace EvoluzeSped.Controller.Input
                 case "C185": 
                     sped.BlocoC.RegistroC185List.Add((Registro_C185)controller.GetRegistro(linha, new Registro_C185())); 
                     break;
-                case "C190": 
+                case "C190":  // Subvenção
                     sped.BlocoC.RegistroC190List.Add((Registro_C190)controller.GetRegistro(linha, new Registro_C190())); 
                     break;
                 case "C191": 
@@ -678,6 +685,216 @@ namespace EvoluzeSped.Controller.Input
             }
         }
 
+        private void processaBlocoE(string registro, string linha)
+        {
+            switch (registro)
+            {
+                case "E001": 
+                    sped.BlocoE.RegistroE001 = (Registro_E001)controller.GetRegistro(linha, new Registro_E001()); 
+                    break;
+                case "E100": 
+                    sped.BlocoE.RegistroE100List.Add((Registro_E100)controller.GetRegistro(linha, new Registro_E100()));
+                    break;
+                case "E110": 
+                    sped.BlocoE.RegistroE110List.Add((Registro_E110)controller.GetRegistro(linha, new Registro_E110())); 
+                    break;
+                case "E111": 
+                    sped.BlocoE.RegistroE111List.Add((Registro_E111)controller.GetRegistro(linha, new Registro_E111())); 
+                    break;
+                case "E112": 
+                    sped.BlocoE.RegistroE112List.Add((Registro_E112)controller.GetRegistro(linha, new Registro_E112())); 
+                    break;
+                case "E113": 
+                    sped.BlocoE.RegistroE113List.Add((Registro_E113)controller.GetRegistro(linha, new Registro_E113())); 
+                    break;
+                case "E115": 
+                    sped.BlocoE.RegistroE115List.Add((Registro_E115)controller.GetRegistro(linha, new Registro_E115())); 
+                    break;
+                case "E116": 
+                    sped.BlocoE.RegistroE116List.Add((Registro_E116)controller.GetRegistro(linha, new Registro_E116()));
+                    break;
+                case "E200": 
+                    sped.BlocoE.RegistroE200List.Add((Registro_E200)controller.GetRegistro(linha, new Registro_E200())); 
+                    break;
+                case "E210": 
+                    sped.BlocoE.RegistroE210List.Add((Registro_E210)controller.GetRegistro(linha, new Registro_E210())); 
+                    break;
+                case "E220": 
+                    sped.BlocoE.RegistroE220List.Add((Registro_E220)controller.GetRegistro(linha, new Registro_E220())); 
+                    break;
+                case "E230": 
+                    sped.BlocoE.RegistroE230List.Add((Registro_E230)controller.GetRegistro(linha, new Registro_E230())); 
+                    break;
+                case "E240": 
+                    sped.BlocoE.RegistroE240List.Add((Registro_E240)controller.GetRegistro(linha, new Registro_E240())); 
+                    break;
+                case "E250": 
+                    sped.BlocoE.RegistroE250List.Add((Registro_E250)controller.GetRegistro(linha, new Registro_E250()));
+                    break;
+                case "E300": 
+                    sped.BlocoE.RegistroE300List.Add((Registro_E300)controller.GetRegistro(linha, new Registro_E300())); 
+                    break;
+                case "E310": 
+                    sped.BlocoE.RegistroE310List.Add((Registro_E310)controller.GetRegistro(linha, new Registro_E310())); 
+                    break;
+                case "E311": 
+                    sped.BlocoE.RegistroE311List.Add((Registro_E311)controller.GetRegistro(linha, new Registro_E311())); 
+                    break;
+                case "E312": 
+                    sped.BlocoE.RegistroE312List.Add((Registro_E312)controller.GetRegistro(linha, new Registro_E312())); 
+                    break;
+                case "E313": 
+                    sped.BlocoE.RegistroE313List.Add((Registro_E313)controller.GetRegistro(linha, new Registro_E313())); 
+                    break;
+                case "E316": 
+                    sped.BlocoE.RegistroE316List.Add((Registro_E316)controller.GetRegistro(linha, new Registro_E316())); 
+                    break;
+                case "E500": 
+                    sped.BlocoE.RegistroE500List.Add((Registro_E500)controller.GetRegistro(linha, new Registro_E500())); 
+                    break;
+                case "E510": 
+                    sped.BlocoE.RegistroE510List.Add((Registro_E510)controller.GetRegistro(linha, new Registro_E510())); 
+                    break;
+                case "E520": 
+                    sped.BlocoE.RegistroE520List.Add((Registro_E520)controller.GetRegistro(linha, new Registro_E520())); 
+                    break;
+                case "E530": 
+                    sped.BlocoE.RegistroE530List.Add((Registro_E530)controller.GetRegistro(linha, new Registro_E530())); 
+                    break;
+                case "E531": 
+                    sped.BlocoE.RegistroE531List.Add((Registro_E531)controller.GetRegistro(linha, new Registro_E531())); 
+                    break;
+                case "E990": 
+                    sped.BlocoE.RegistroE990 = (Registro_E990)controller.GetRegistro(linha, new Registro_E990()); 
+                    break;
+            }
+        }
+
+        private void processaBlocoG(string registro, string linha)
+        {
+            switch (registro)
+            {
+                case "G001":
+                    sped.BlocoG.RegistroG001 = (Registro_G001)controller.GetRegistro(linha, new Registro_G001());
+                    break;
+                case "G110":
+                    sped.BlocoG.RegistroG110List.Add((Registro_G110)controller.GetRegistro(linha, new Registro_G110()));
+                    break;
+                case "G125":
+                    sped.BlocoG.RegistroG125List.Add((Registro_G125)controller.GetRegistro(linha, new Registro_G125()));
+                    break;
+                case "G126":
+                    sped.BlocoG.RegistroG126List.Add((Registro_G126)controller.GetRegistro(linha, new Registro_G126()));
+                    break;
+                case "G130":
+                    sped.BlocoG.RegistroG130List.Add((Registro_G130)controller.GetRegistro(linha, new Registro_G130()));
+                    break;
+                case "G140":
+                    sped.BlocoG.RegistroG140List.Add((Registro_G140)controller.GetRegistro(linha, new Registro_G140()));
+                    break;
+                case "G990":
+                    sped.BlocoG.RegistroG990 = (Registro_G990)controller.GetRegistro(linha, new Registro_G990());
+                    break;
+            }
+        }
+
+        private void processaBlocoH(string registro, string linha)
+        {
+            switch (registro)
+            {
+                case "H001":
+                    sped.BlocoH.RegistroH001 = (Registro_H001)controller.GetRegistro(linha, new Registro_H001());
+                    break;
+                case "H005":
+                    sped.BlocoH.RegistroH005List.Add((Registro_H005)controller.GetRegistro(linha, new Registro_H005()));
+                    break;
+                case "H010":
+                    sped.BlocoH.RegistroH010List.Add((Registro_H010)controller.GetRegistro(linha, new Registro_H010()));
+                    break;
+                case "H020":
+                    sped.BlocoH.RegistroH020List.Add((Registro_H020)controller.GetRegistro(linha, new Registro_H020()));
+                    break;
+                case "H030":
+                    sped.BlocoH.RegistroH030List.Add((Registro_H030)controller.GetRegistro(linha, new Registro_H030()));
+                    break;
+                case "H990":
+                    sped.BlocoH.RegistroH990 = (Registro_H990)controller.GetRegistro(linha, new Registro_H990());
+                    break;
+            }
+        }
+
+        private void processaBlocoK(string registro, string linha)
+        {
+            switch (registro)
+            {
+                case "K001":
+                    sped.BlocoK.RegistroK001 = (Registro_K001)controller.GetRegistro(linha, new Registro_K001());
+                    break;
+                case "K100": 
+                    sped.BlocoK.RegistroK100List.Add((Registro_K100)controller.GetRegistro(linha, new Registro_K100())); 
+                    break;
+                case "K200": 
+                    sped.BlocoK.RegistroK200List.Add((Registro_K200)controller.GetRegistro(linha, new Registro_K200())); 
+                    break;
+                case "K210": 
+                    sped.BlocoK.RegistroK210List.Add((Registro_K210)controller.GetRegistro(linha, new Registro_K210())); 
+                    break;
+                case "K215": 
+                    sped.BlocoK.RegistroK215List.Add((Registro_K215)controller.GetRegistro(linha, new Registro_K215())); 
+                    break;
+                case "K220": 
+                    sped.BlocoK.RegistroK220List.Add((Registro_K220)controller.GetRegistro(linha, new Registro_K220())); 
+                    break;
+                case "K230": 
+                    sped.BlocoK.RegistroK230List.Add((Registro_K230)controller.GetRegistro(linha, new Registro_K230())); 
+                    break;
+                case "K235": 
+                    sped.BlocoK.RegistroK235List.Add((Registro_K235)controller.GetRegistro(linha, new Registro_K235())); 
+                    break;
+                case "K250": 
+                    sped.BlocoK.RegistroK250List.Add((Registro_K250)controller.GetRegistro(linha, new Registro_K250())); 
+                    break;
+                case "K255": 
+                    sped.BlocoK.RegistroK255List.Add((Registro_K255)controller.GetRegistro(linha, new Registro_K255())); 
+                    break;
+                case "K260": 
+                    sped.BlocoK.RegistroK260List.Add((Registro_K260)controller.GetRegistro(linha, new Registro_K260())); 
+                    break;
+                case "K265": 
+                    sped.BlocoK.RegistroK265List.Add((Registro_K265)controller.GetRegistro(linha, new Registro_K265())); 
+                    break;
+                case "K270": 
+                    sped.BlocoK.RegistroK270List.Add((Registro_K270)controller.GetRegistro(linha, new Registro_K270())); 
+                    break;
+                case "K275": 
+                    sped.BlocoK.RegistroK275List.Add((Registro_K275)controller.GetRegistro(linha, new Registro_K275())); 
+                    break;
+                case "K280": 
+                    sped.BlocoK.RegistroK280List.Add((Registro_K280)controller.GetRegistro(linha, new Registro_K280()));
+                    break;
+                case "K290": 
+                    sped.BlocoK.RegistroK290List.Add((Registro_K290)controller.GetRegistro(linha, new Registro_K290())); 
+                    break;
+                case "K291": 
+                    sped.BlocoK.RegistroK291List.Add((Registro_K291)controller.GetRegistro(linha, new Registro_K291())); 
+                    break;
+                case "K292": 
+                    sped.BlocoK.RegistroK292List.Add((Registro_K292)controller.GetRegistro(linha, new Registro_K292())); 
+                    break;
+                case "K300": 
+                    sped.BlocoK.RegistroK300List.Add((Registro_K300)controller.GetRegistro(linha, new Registro_K300())); 
+                    break;
+                case "K301": 
+                    sped.BlocoK.RegistroK301List.Add((Registro_K301)controller.GetRegistro(linha, new Registro_K301()));
+                    break;
+                case "K302": 
+                    sped.BlocoK.RegistroK302List.Add((Registro_K302)controller.GetRegistro(linha, new Registro_K302())); 
+                    break;
+                case "K990":
+                    sped.BlocoK.RegistroK990 = (Registro_K990)controller.GetRegistro(linha, new Registro_K990());
+                    break;
+            }
+        }
         private void processaBloco9(string registro, string linha)
         {
             switch (registro)
@@ -693,86 +910,10 @@ namespace EvoluzeSped.Controller.Input
                     break;
                 case "9999":
                     sped.Bloco9.Registro9999 = (Registro_9999)controller.GetRegistro(linha, new Registro_9999());
+                    finalArquivo = false;
                     break;
             }
         }
-
-
-        /* 
-                    
-
-
-                    
-
-                     private void processaBlocoK(string registro, string linha)
-                     {
-                         switch (registro)
-                         {
-                             case "K001":
-                                 sped.BlocoK.RegistroK001 = controller.BlocoK.GetRegistroK001(linha);
-                                 break;
-                             case "K990":
-                                 sped.BlocoK.RegistroK990 = controller.BlocoK.GetRegistroK990(linha);
-                                 break;
-                         }
-                     }
-                     private void processaBlocoH(string registro, string linha)
-                     {
-                         switch (registro)
-                         {
-                             case "H001":
-                                 sped.BlocoH.RegistroH001 = controller.BlocoH.GetRegistroH001(linha);
-                                 break;
-                             case "H990":
-                                 sped.BlocoH.RegistroH990 = controller.BlocoH.GetRegistroH990(linha);
-                                 break;
-                         }
-                     }
-
-                     private void processaBlocoG(string registro, string linha)
-                     {
-                         switch (registro)
-                         {
-                             case "G001":
-                                 sped.BlocoG.RegistroG001 = controller.BlocoG.GetRegistroG001(linha);
-                                 break;
-                             case "G110":
-                                 sped.BlocoG.RegistroG110List.Add(controller.BlocoG.GetRegistroG110(linha));
-                                 break;
-                             case "G125":
-                                 sped.BlocoG.RegistroG125List.Add(controller.BlocoG.GetRegistroG125(linha));
-                                 break;
-                             case "G990":
-                                 sped.BlocoG.RegistroG990 = controller.BlocoG.GetRegistroG990(linha);
-                                 break;
-                         }
-                     }
-
-                     private void processaBlocoE(string registro, string linha)
-                     {
-                         switch (registro)
-                         {
-                             case "E001":
-                                 sped.BlocoE.RegistroE001 = controller.BlocoE.GetRegistroE001(linha);
-                                 break;
-                             case "E100":
-                                 sped.BlocoE.RegistroE100List.Add(controller.BlocoE.GetRegistroE100(linha));
-                                 break;
-                             case "E110":
-                                 sped.BlocoE.RegistroE110List.Add(controller.BlocoE.GetRegistroE110(linha));
-                                 break;
-                             case "E111":
-                                 sped.BlocoE.RegistroE111List.Add(controller.BlocoE.GetRegistroE111(linha));
-                                 break;
-                             case "E990":
-                                 sped.BlocoE.RegistroE990 = controller.BlocoE.GetRegistroE990(linha);
-                                 break;
-                         }
-                     }
-
-                     
-
-             */
-
+    
     }
 }

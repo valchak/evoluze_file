@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -43,8 +44,43 @@ namespace EvoluzeSped
 
         private void btn_EFD_ICMS_IPI_Click(object sender, EventArgs e)
         {
+            _Singleton.GetInstance.processandoArquivo = true;
+            backgroundWorker.RunWorkerAsync();
+            progressBar.Visible = true;
             ArquivoView arquivo = new ArquivoView();
-            arquivo.GeraExcel(txtFileOpen.Text);
+            arquivo.GeraArquivoExcel(txtFileOpen.Text);
+            progressBar.Visible = false;
+
         }
+
+        private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            
+        }
+
+        private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progressBar.Value = e.ProgressPercentage;
+            //lbPercentual.Text = e.ProgressPercentage.ToString() + " %";
+        }
+
+        private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (e.Cancelled)
+            {
+                progressBar.Value = 0;
+                
+                lbPercentual.Text = "0";
+            }
+            else
+            {
+                if (!_Singleton.GetInstance.processandoArquivo)
+                {
+                    
+                }
+                //lbPercentual.Text = " 100 %";
+            }
+        }
+
     }
 }

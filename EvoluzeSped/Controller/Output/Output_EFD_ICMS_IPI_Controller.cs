@@ -1,32 +1,28 @@
 ﻿using ClosedXML.Excel;
 using EvoluzeSped.Controller.Blocos;
-using EvoluzeSped.Model.Arquivos;
-using EvoluzeSped.Model.Blocos;
+
+using EvoluzeSpedFile.Model.Blocos;
+using EvoluzeSpedFile.Model.Arquivos;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace EvoluzeSped.Controller.Output
 {
     class Output_EFD_ICMS_IPI_Controller
     {
         ControllerBlocos controller;
-        //Sped_EFD_ICMS_IPI sped;
         XLWorkbook wb;
         public Output_EFD_ICMS_IPI_Controller()
         {
-            //sped = new Sped_EFD_ICMS_IPI();
             controller = new ControllerBlocos();
             wb = new XLWorkbook();
         }
 
 
 
-
-
         public string Excel_Sped_EFD_ICMS_IPI(Sped_EFD_ICMS_IPI sped, string arquivo)
         {
-            string retorno = "Arquivos salvo com sucesso:\n" + arquivo;
+            string retorno = "Arquivos gerado com sucesso:\n\n" + "Local:\n\n" +arquivo;
 
             ProcessaBlocosParaExcel(sped);
 
@@ -55,6 +51,10 @@ namespace EvoluzeSped.Controller.Output
             processaBlocoB(sped.BlocoB);
             processaBlocoC(sped.BlocoC);
             processaBlocoD(sped.BlocoD);
+            processaBlocoE(sped.BlocoE);
+            processaBlocoG(sped.BlocoG);
+            processaBlocoH(sped.BlocoH);
+            processaBlocoK(sped.BlocoK);
             processaBloco9(sped.Bloco9);
         }
 
@@ -265,12 +265,91 @@ namespace EvoluzeSped.Controller.Output
             controller.GetRegistroExcel(wb, bloco.RegistroD990);
         }
 
+        private void processaBlocoE(BlocoE bloco)
+        {
+            controller.GetRegistroExcel(wb, bloco.RegistroE001);
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroE100List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroE110List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroE111List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroE112List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroE113List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroE115List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroE116List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroE200List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroE210List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroE220List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroE230List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroE240List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroE250List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroE300List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroE310List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroE311List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroE312List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroE313List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroE316List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroE500List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroE510List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroE520List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroE530List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroE531List));
+            controller.GetRegistroExcel(wb, bloco.RegistroE990);
+        }
+
+        private void processaBlocoG(BlocoG bloco)
+        {
+            controller.GetRegistroExcel(wb, bloco.RegistroG001);
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroG110List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroG125List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroG126List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroG126List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroG130List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroG140List));
+            controller.GetRegistroExcel(wb, bloco.RegistroG990);
+        }
+        private void processaBlocoH(BlocoH bloco)
+        {
+            controller.GetRegistroExcel(wb, bloco.RegistroH001);
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroH005List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroH010List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroH020List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroH030List)); 
+            controller.GetRegistroExcel(wb, bloco.RegistroH990);
+        }
+
+        private void processaBlocoK(BlocoK bloco)
+        {
+            controller.GetRegistroExcel(wb, bloco.RegistroK001);
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroK100List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroK200List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroK210List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroK215List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroK220List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroK230List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroK235List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroK250List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroK255List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroK260List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroK265List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroK270List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroK275List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroK280List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroK290List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroK291List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroK292List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroK300List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroK301List));
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroK302List));
+            controller.GetRegistroExcel(wb, bloco.RegistroK990);
+        }
+
         private void processaBloco9(Bloco9 bloco)
         {   
             controller.GetRegistroExcel(wb, bloco.Registro9001);
             controller.GetRegistroExcelList(wb, new List<object>(bloco.Registro9900List));
             controller.GetRegistroExcel(wb, bloco.Registro9990);
             controller.GetRegistroExcel(wb, bloco.Registro9999);
+            _Singleton.GetInstance.processandoArquivo = false;
         }
     }
 }
+

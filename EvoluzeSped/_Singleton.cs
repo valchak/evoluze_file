@@ -24,9 +24,11 @@ namespace EvoluzeSped
                 return instance;
             }
         }
+        public int progressCompleted { get; set; }
 
         /* ProgressBar */
         public bool processandoArquivo = true;
+        
         public int linhaAtualArquivo = 0;
         public int linhaTotalArquivo = 0;
         

@@ -11,7 +11,6 @@ namespace EvoluzeSped.Controller.Blocos
     {
         public Object GetRegistro(string linha, object registro)
         {
-
             string[] array = linha.Split('|');
 
             IDictionary<int, string> listaProriedades = PropriedadeRegistro(registro);
@@ -31,17 +30,19 @@ namespace EvoluzeSped.Controller.Blocos
                             objPropertyInfo.SetValue(registro, StringToDate(valor));
                         break;
                     default:
-                        //if(objPropertyInfo.Name.Substring(4,7).Equals("_DT") && !valor.Equals(""))
-                        //    objPropertyInfo.SetValue(registro, util.StringToStringDateFormatExcel(valor));
-                        //else
+                        if(objPropertyInfo.Name.Substring(4,2).Equals("DT") && !valor.Equals(""))
+                            objPropertyInfo.SetValue(registro, StringToStringDateFormatExcel(valor));
+                        else
                             objPropertyInfo.SetValue(registro, valor);
                         break;
                 }
             }
+            linhaAtualArquivo();
             return registro;
         }
         public XLWorkbook GetRegistroExcel(XLWorkbook workBook, object registro)
         {
+            
             IDictionary<int, string> listaProriedades = PropriedadeRegistro(registro);
             
             if (listaProriedades != null)
@@ -95,13 +96,15 @@ namespace EvoluzeSped.Controller.Blocos
                 ws.Columns("1-" + listaProriedades.Count).AdjustToContents();
                 ws.Columns("1-" + listaProriedades.Count).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
             }
+            linhaAtualArquivo();
             return workBook;
         }
+
         public XLWorkbook GetRegistroExcelList(XLWorkbook workBook, List<object> listaRegistro)
         {
             if (listaRegistro.Count > 0)
             {
-
+                linhaAtualArquivo();
                 var tipo = listaRegistro.First().GetType();
 
                 var linha = 1;
@@ -151,11 +154,15 @@ namespace EvoluzeSped.Controller.Blocos
                 ws.Columns("1-" + listaProriedades.Count).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
 
             }
+            linhaAtualArquivo();
             return workBook;
         }
 
 
-
+        private void linhaAtualArquivo()
+        {
+            _Singleton.GetInstance.linhaAtualArquivo = _Singleton.GetInstance.linhaAtualArquivo + 1;
+        }
 
         public Dictionary<int, string> PropriedadeRegistro(object registro)
         {

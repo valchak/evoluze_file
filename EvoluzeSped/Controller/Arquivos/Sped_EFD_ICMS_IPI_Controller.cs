@@ -16,12 +16,12 @@ namespace EvoluzeSped.Controller.Arquivos
         Input_EFD_ICMS_IPI_Controller inputController;
 
 
-        public string GeraExcel(string localOrigemArquivoSped, SaveFileDialog salvarArquivoExcel)
+        public string GeraExcel(string localOrigemArquivoSped, string salvarArquivoExcel)
         {
             inputController = new Input_EFD_ICMS_IPI_Controller();
             Sped_EFD_ICMS_IPI sped = inputController.GetObjetoSped(localOrigemArquivoSped);
             outputController = new Output_EFD_ICMS_IPI_Controller();
-            return outputController.Excel_Sped_EFD_ICMS_IPI(sped, salvarArquivoExcel.FileName);
+            return outputController.Excel_Sped_EFD_ICMS_IPI(sped, salvarArquivoExcel);
         }
 
 

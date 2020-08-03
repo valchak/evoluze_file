@@ -18,6 +18,7 @@ using static EvoluzeSpedFile.Model.Registros.RegistroBlocoH;
 using static EvoluzeSpedFile.Model.Registros.RegistroBlocoK;
 using System.Threading;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace EvoluzeSped.Controller.Input
 {
@@ -25,7 +26,7 @@ namespace EvoluzeSped.Controller.Input
     {
         ControllerBlocos controller;
         Sped_EFD_ICMS_IPI sped;
-        bool finalArquivo = true;
+
         public Sped_EFD_ICMS_IPI GetObjetoSped(string arquivo)
         {
             sped = new Sped_EFD_ICMS_IPI();
@@ -34,61 +35,69 @@ namespace EvoluzeSped.Controller.Input
             Queue<string> linhas = new Queue<string>();
             string linha = null;
             StreamReader reader = new StreamReader(arquivo, Encoding.Default);
-            //Regex rx = new Regex("\r\n");
-            //_Singleton.GetInstance.linhaTotalArquivo = rx.Matches(reader.ReadToEnd()).Count  * 2;
-
+           
             while ((linha = reader.ReadLine()) != null)
             {
-                if (finalArquivo) { 
-                    linhas.Enqueue(linha);
-                    validaRegistro(linha);
+                linhas.Enqueue(linha);
+                if (!validaRegistro(linha))
+                {
+                    break;
                 }
+
             }
             reader.Close();
-
 
             return sped;
 
         }
-        private void validaRegistro(string linha)
+
+        private bool validaRegistro(string linha)
         {
-            string[] array = linha.Split('|');
-            string bloco = array[1].Substring(0, 1);
-
-            switch (bloco)
+            try
             {
-                case "0":
-                    processaBloco0(array[1], linha);
-                    break;
-                case "1":
-                    processaBloco1(array[1], linha);
-                    break;
-                case "B":
-                    processaBlocoB(array[1], linha);
-                    break;
-                case "C":
-                    processaBlocoC(array[1], linha);
-                    break;
-                case "D":
-                    processaBlocoD(array[1], linha);
-                    break;
-                case "E":
-                    processaBlocoE(array[1], linha);
-                    break;
-                case "G":
-                    processaBlocoG(array[1], linha);
-                    break;
-                case "H":
-                    processaBlocoH(array[1], linha);
-                    break;
-                case "K":
-                    processaBlocoK(array[1], linha);
-                    break;
-                case "9":
-                    processaBloco9(array[1], linha);
-                    break;
-            }
+                string[] array = linha.Split('|');
+                string bloco = array[1].Substring(0, 1);
 
+                switch (bloco)
+                {
+                    case "0":
+                        processaBloco0(array[1], linha);
+                        break;
+                    case "1":
+                        processaBloco1(array[1], linha);
+                        break;
+                    case "B":
+                        processaBlocoB(array[1], linha);
+                        break;
+                    case "C":
+                        processaBlocoC(array[1], linha);
+                        break;
+                    case "D":
+                        processaBlocoD(array[1], linha);
+                        break;
+                    case "E":
+                        processaBlocoE(array[1], linha);
+                        break;
+                    case "G":
+                        processaBlocoG(array[1], linha);
+                        break;
+                    case "H":
+                        processaBlocoH(array[1], linha);
+                        break;
+                    case "K":
+                        processaBlocoK(array[1], linha);
+                        break;
+                    case "9":
+                        processaBloco9(array[1], linha);
+                        break;
+                }
+                return true;
+            } catch(Exception ex)
+            {
+                return false;
+                //MessageBox.Show("Atenção: " + ex.Message);
+            }
+            
         }
 
         private void processaBloco0(string registro, string linha)
@@ -895,6 +904,7 @@ namespace EvoluzeSped.Controller.Input
                     break;
             }
         }
+        
         private void processaBloco9(string registro, string linha)
         {
             switch (registro)
@@ -910,7 +920,6 @@ namespace EvoluzeSped.Controller.Input
                     break;
                 case "9999":
                     sped.Bloco9.Registro9999 = (Registro_9999)controller.GetRegistro(linha, new Registro_9999());
-                    finalArquivo = false;
                     break;
             }
         }

@@ -19,3 +19,4 @@ C:\Users\Valchak\Documents\GitHub\evoluze_file\EvoluzeSped\obj\Debug\EvoluzeSped
 C:\Users\Valchak\Documents\GitHub\evoluze_file\EvoluzeSped\obj\Debug\EvoluzeSped.csprojAssemblyReference.cache
 C:\Users\Valchak\Documents\GitHub\evoluze_file\EvoluzeSped\bin\Debug\EvoluzeFile_S_P_E_D.dll
 C:\Users\Valchak\Documents\GitHub\evoluze_file\EvoluzeSped\bin\Debug\System.IO.Packaging.xml
+C:\Users\Valchak\Documents\GitHub\evoluze_file\EvoluzeSped\obj\Debug\EvoluzeSped.Spleh.resources

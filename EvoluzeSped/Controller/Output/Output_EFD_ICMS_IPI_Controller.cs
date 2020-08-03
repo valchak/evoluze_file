@@ -82,7 +82,6 @@ namespace EvoluzeSped.Controller.Output
             controller.GetRegistroExcelList(wb, new List<object>(bloco.Registro0500List));
             controller.GetRegistroExcelList(wb, new List<object>(bloco.Registro0600List));
             controller.GetRegistroExcel(wb, bloco.Registro0990);
-
         }
 
         private void processaBloco1(Bloco1 bloco)
@@ -348,7 +347,7 @@ namespace EvoluzeSped.Controller.Output
             controller.GetRegistroExcelList(wb, new List<object>(bloco.Registro9900List));
             controller.GetRegistroExcel(wb, bloco.Registro9990);
             controller.GetRegistroExcel(wb, bloco.Registro9999);
-            _Singleton.GetInstance.processandoArquivo = false;
+            
         }
     }
 }

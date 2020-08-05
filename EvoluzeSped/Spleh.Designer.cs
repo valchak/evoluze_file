@@ -74,7 +74,7 @@
             this.MinimizeBox = false;
             this.Name = "Spleh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Spleh";
+            this.Text = "Gerando Arquivo Sped";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

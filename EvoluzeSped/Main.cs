@@ -20,7 +20,7 @@ namespace EvoluzeSped
         public Main()
         {
             InitializeComponent();
-            txtFileOpen.Text = "C:\\Users\\Valchak\\Desktop\\SpedPosto\\EFD-Emp000244-Fil000001-03_2020.txt";
+            //txtFileOpen.Text = "C:\\Users\\Valchak\\Desktop\\SpedPosto\\EFD-Emp000244-Fil000001-03_2020.txt";
         }
 
         private void btnFileOpen_Click(object sender, EventArgs e)
@@ -56,8 +56,10 @@ namespace EvoluzeSped
         {
             if (!txtFileOpen.Text.Trim().Equals(""))
             {
+                this.Visible = false;
                 ArquivoView arquivo = new ArquivoView();
                 arquivo.GeraArquivoExcel(txtFileOpen.Text);
+                this.Visible = true;
             } else
             {
                 MessageBox.Show("Favor selecionar o arquivo sped");

@@ -37,7 +37,6 @@ namespace EvoluzeSped.Controller.Blocos
                         break;
                 }
             }
-            linhaAtualArquivo();
             return registro;
         }
         public XLWorkbook GetRegistroExcel(XLWorkbook workBook, object registro)
@@ -96,7 +95,6 @@ namespace EvoluzeSped.Controller.Blocos
                 ws.Columns("1-" + listaProriedades.Count).AdjustToContents();
                 ws.Columns("1-" + listaProriedades.Count).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
             }
-            linhaAtualArquivo();
             return workBook;
         }
 
@@ -104,7 +102,6 @@ namespace EvoluzeSped.Controller.Blocos
         {
             if (listaRegistro.Count > 0)
             {
-                linhaAtualArquivo();
                 var tipo = listaRegistro.First().GetType();
 
                 var linha = 1;
@@ -154,14 +151,7 @@ namespace EvoluzeSped.Controller.Blocos
                 ws.Columns("1-" + listaProriedades.Count).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
 
             }
-            linhaAtualArquivo();
             return workBook;
-        }
-
-
-        private void linhaAtualArquivo()
-        {
-            _Singleton.GetInstance.linhaAtualArquivo = _Singleton.GetInstance.linhaAtualArquivo + 1;
         }
 
         public Dictionary<int, string> PropriedadeRegistro(object registro)

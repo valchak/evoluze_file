@@ -57,11 +57,14 @@
     <Reference Include="DocumentFormat.OpenXml, Version=2.11.3.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
       <HintPath>packages\DocumentFormat.OpenXml.2.11.3\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
     </Reference>
-    <Reference Include="EvoluzeFile_S_P_E_D, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\EvoluzeFile_S_P_E_D.1.0.3\lib\netstandard2.0\EvoluzeFile_S_P_E_D.dll</HintPath>
+    <Reference Include="EvoluzeFile_S_P_E_D, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\EvoluzeFile_S_P_E_D.1.1.0\lib\netstandard2.0\EvoluzeFile_S_P_E_D.dll</HintPath>
     </Reference>
     <Reference Include="ExcelNumberFormat, Version=1.0.10.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
       <HintPath>packages\ExcelNumberFormat.1.0.10\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="LiteDB, Version=5.0.8.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
+      <HintPath>packages\LiteDB.5.0.8\lib\net45\LiteDB.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -74,6 +77,7 @@
     <Reference Include="System.IO.Packaging, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.IO.Packaging.4.7.0\lib\net46\System.IO.Packaging.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -90,6 +94,8 @@
     <Compile Include="Controller\Blocos\ControllerBlocos.cs" />
     <Compile Include="Controller\Input\Input_EFD_ICMS_IPI_Controller.cs" />
     <Compile Include="Controller\Output\Output_EFD_ICMS_IPI_Controller.cs" />
+    <Compile Include="Database\BancoLiteDB.cs" />
+    <Compile Include="Database\Parametro.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,12 @@
       <DependentUpon>Spleh.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\ArquivoView.cs" />
+    <Compile Include="View\FrmParametro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmParametro.Designer.cs">
+      <DependentUpon>FrmParametro.cs</DependentUpon>
+    </Compile>
     <Compile Include="_Singleton.cs" />
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -121,6 +133,9 @@
     </Compile>
     <EmbeddedResource Include="Spleh.resx">
       <DependentUpon>Spleh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmParametro.resx">
+      <DependentUpon>FrmParametro.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -160,5 +175,6 @@
   <ItemGroup>
     <Content Include="evoluze_logo_HqE_icon.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -13,7 +13,7 @@ namespace EvoluzeSped.Controller.Blocos
         {
             string[] array = linha.Split('|');
 
-            IDictionary<int, string> listaProriedades = PropriedadeRegistro(registro);
+            //IDictionary<int, string> listaProriedades = PropriedadeRegistro(registro);
 
             int i = 0;
             var tipo = registro.GetType();

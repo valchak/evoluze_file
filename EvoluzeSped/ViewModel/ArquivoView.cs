@@ -1,8 +1,7 @@
 ﻿using ClosedXML.Excel;
-using EvoluzeSped.Controller.Arquivos;
-using EvoluzeSped.Controller.Input;
-using EvoluzeSped.Controller.Output;
-using EvoluzeSpedFile.Model.Arquivos;
+using EvoluzeSped.Database;
+using EvoluzeSpedFile.Controller.Arquivos;
+using EvoluzeSpedFile.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,8 +37,8 @@ namespace EvoluzeSped.ViewModel
 
             new Thread(new ThreadStart(Gera)).Start();
 
-            new Thread(new ThreadStart (abreTela)).Start();
-            //new Thread(abreTela).Start();
+            //new Thread(new ThreadStart (abreTela)).Start();
+            abreTela();
 
             //MessageBox.Show(controller.GeraExcel(localOrigemArquivSped, salvarArquivoExcel.FileName), "Aquivo Sped!", MessageBoxButtons.OK);
 
@@ -48,8 +47,10 @@ namespace EvoluzeSped.ViewModel
 
         private void Gera()
         {
+            
+            Parametro_Sped_EFD_ICMS_IPI parametro = new BancoLiteDB().getParametros("").Parametro_Sped_EFD_ICMS_IPI;
             Sped_EFD_ICMS_IPI_Controller controller = new Sped_EFD_ICMS_IPI_Controller();
-            string msg = controller.GeraExcel(origem, destino);
+            string msg = controller.GeraExcel(origem, destino, parametro);
             _Singleton.GetInstance.processandoArquivo = false;
             MessageBox.Show(msg, "Aquivo Sped!", MessageBoxButtons.OK);
         }

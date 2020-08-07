@@ -1,14 +1,13 @@
 ﻿using ClosedXML.Excel;
 using EvoluzeSped.Controller.Blocos;
-
-using EvoluzeSpedFile.Model.Blocos;
 using EvoluzeSpedFile.Model.Arquivos;
+using EvoluzeSpedFile.Model.Blocos;
 using System;
 using System.Collections.Generic;
 
 namespace EvoluzeSped.Controller.Output
 {
-    class Output_EFD_ICMS_IPI_Controller
+    public class Output_EFD_ICMS_IPI_Controller
     {
         ControllerBlocos controller;
         XLWorkbook wb;
@@ -22,7 +21,7 @@ namespace EvoluzeSped.Controller.Output
 
         public string Excel_Sped_EFD_ICMS_IPI(Sped_EFD_ICMS_IPI sped, string arquivo)
         {
-            string retorno = "Arquivos gerado com sucesso:\n\n" + "Local:\n\n" +arquivo;
+            string retorno = "Arquivos gerado com sucesso:\n\n" + "Local:\n\n" + arquivo;
 
             ProcessaBlocosParaExcel(sped);
 
@@ -41,7 +40,7 @@ namespace EvoluzeSped.Controller.Output
 
         }
 
-        
+
 
 
         private void ProcessaBlocosParaExcel(Sped_EFD_ICMS_IPI sped)
@@ -126,7 +125,7 @@ namespace EvoluzeSped.Controller.Output
         private void processaBlocoB(BlocoB bloco)
         {
             controller.GetRegistroExcel(wb, bloco.RegistroB001);
-            
+
             controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroB020List));
             controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroB025List));
             controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroB030List));
@@ -311,7 +310,7 @@ namespace EvoluzeSped.Controller.Output
             controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroH005List));
             controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroH010List));
             controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroH020List));
-            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroH030List)); 
+            controller.GetRegistroExcelList(wb, new List<object>(bloco.RegistroH030List));
             controller.GetRegistroExcel(wb, bloco.RegistroH990);
         }
 
@@ -342,13 +341,12 @@ namespace EvoluzeSped.Controller.Output
         }
 
         private void processaBloco9(Bloco9 bloco)
-        {   
+        {
             controller.GetRegistroExcel(wb, bloco.Registro9001);
             controller.GetRegistroExcelList(wb, new List<object>(bloco.Registro9900List));
             controller.GetRegistroExcel(wb, bloco.Registro9990);
             controller.GetRegistroExcel(wb, bloco.Registro9999);
-            
+
         }
     }
 }
-

@@ -1,25 +1,26 @@
 ﻿using EvoluzeSped.Controller.Input;
 using EvoluzeSped.Controller.Output;
+using EvoluzeSpedFile.Model;
 using EvoluzeSpedFile.Model.Arquivos;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace EvoluzeSped.Controller.Arquivos
 {
-    class Sped_EFD_ICMS_IPI_Controller
+    public class Sped_EFD_ICMS_IPI_Controller
     {
         Output_EFD_ICMS_IPI_Controller outputController;
         Input_EFD_ICMS_IPI_Controller inputController;
 
 
-        public string GeraExcel(string localOrigemArquivoSped, string salvarArquivoExcel)
+        public string GeraExcel(string localOrigemArquivoSped, string salvarArquivoExcel, Parametro_Sped_EFD_ICMS_IPI parametro)
         {
+            if (parametro == null)
+                parametro = new Parametro_Sped_EFD_ICMS_IPI();
+
             inputController = new Input_EFD_ICMS_IPI_Controller();
-            Sped_EFD_ICMS_IPI sped = inputController.GetObjetoSped(localOrigemArquivoSped);
+            Sped_EFD_ICMS_IPI sped = inputController.GetObjetoSped(localOrigemArquivoSped, parametro);
             outputController = new Output_EFD_ICMS_IPI_Controller();
             return outputController.Excel_Sped_EFD_ICMS_IPI(sped, salvarArquivoExcel);
         }

@@ -1,14 +1,7 @@
 ﻿using EvoluzeSped.Database;
-using EvoluzeSpedFile.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EvoluzeSped.View
@@ -145,7 +138,7 @@ namespace EvoluzeSped.View
                 if (tabBlocoC.CanFocus)
                     PopulaGrid(grid_EFD_ICMS_IP_BlocoC, null, false);
                 if (tabBlocoD.CanFocus)
-                    PopulaGrid(grid_EFD_ICMS_IP_BlocoD, null, true);
+                    PopulaGrid(grid_EFD_ICMS_IP_BlocoD, null, false);
                 if (tabBlocoE.CanFocus)
                     PopulaGrid(grid_EFD_ICMS_IP_BlocoE, null, false);
                 if (tabBlocoG.CanFocus)

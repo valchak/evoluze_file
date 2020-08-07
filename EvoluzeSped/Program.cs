@@ -14,9 +14,11 @@ namespace EvoluzeSped
         [STAThread]
         static void Main()
         {
+            //AutoUpdater.Initialize(file://c:\tmp\config.json, Application.ProductVersion);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new FormMain());
+            //AutoUpdater.Instance.Stop();
         }
     }
 }

@@ -1,13 +1,9 @@
-﻿using ClosedXML.Excel;
-using EvoluzeSped.Database;
-using EvoluzeSpedFile.Controller.Arquivos;
+﻿using EvoluzeSped.Database;
+using EvoluzeSped.View;
+using EvoluzeSped.Controller.Arquivos;
 using EvoluzeSpedFile.Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EvoluzeSped.ViewModel
@@ -57,7 +53,7 @@ namespace EvoluzeSped.ViewModel
 
         private void abreTela( )
         {
-            Spleh tela = new Spleh();
+            FrmSplah tela = new FrmSplah();
             tela.ShowDialog();
             tela.Dispose();
         }

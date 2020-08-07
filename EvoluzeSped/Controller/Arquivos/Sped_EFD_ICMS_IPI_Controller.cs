@@ -31,9 +31,7 @@ namespace EvoluzeSped.Controller.Arquivos
             char[] arrChar = arquivoOrigem.ToCharArray();
             Array.Reverse(arrChar);
             string invertida = new String(arrChar);
-
             return invertida;
-
         }
     }
 }

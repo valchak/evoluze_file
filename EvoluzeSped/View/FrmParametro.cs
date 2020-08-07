@@ -1,6 +1,7 @@
 ﻿using EvoluzeSped.Database;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -89,6 +90,9 @@ namespace EvoluzeSped.View
                     row = grid.Rows.Add();
                     grid.Rows[row].Cells[0].Value = objPropertyInfo.Name.Substring(9);
                     grid.Rows[row].Cells[1].Value = objPropertyInfo.GetValue(bloco);
+                    grid.Rows[row].Cells[2].Value = GetInformationBloco(objPropertyInfo);
+
+
                 }
             } else
             {
@@ -100,6 +104,21 @@ namespace EvoluzeSped.View
             }
 
             grid.Refresh();
+        }
+
+        private string GetInformationBloco(PropertyInfo objPropertyInfo)
+        {
+            string valor = "";
+
+            foreach (var obj in objPropertyInfo.CustomAttributes.ToList())
+            {
+                if (obj.AttributeType.Name.Equals("LabelField"))
+                {
+                    valor = obj.ConstructorArguments[0].Value.ToString();
+                    break;
+                }
+            }
+            return valor;
         }
 
         private void ckLimpar_CheckedChanged(object sender, EventArgs e)

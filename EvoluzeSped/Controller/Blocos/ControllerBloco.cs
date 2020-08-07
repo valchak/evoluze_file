@@ -1,6 +1,8 @@
 ﻿using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Spreadsheet;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
@@ -30,43 +32,83 @@ namespace EvoluzeSped.Controller.Blocos
                     switch (objPropertyInfo.PropertyType.Name)
                     {
                         case "DateTime":
+                        try
+                        {
                             if (!valor.Equals("") || valor.Count() == 8)
                                 objPropertyInfo.SetValue(registro, StringToDate(valor));
                             else
                                 objPropertyInfo.SetValue(registro, null);
+
+                        }
+                        catch (Exception ex)
+                        {
+                            System.Windows.Forms.MessageBox.Show(ex.Message + "\nNome: " + tipo.Name + "\nProriedade: " + objPropertyInfo.PropertyType.Name + "\nLinha: " + linha + "\nValor: " + valor);
+                        }
+                        
                             break;
                         case "Double":
-                            try
-                            {
-                                objPropertyInfo.SetValue(registro, StringToDouble(valor));
-                            }
-                            catch (Exception ex)
-                            {
-                                System.Windows.Forms.MessageBox.Show(ex.Message + "\nNome: " + tipo.Name + "\nProriedade: " + objPropertyInfo.PropertyType.Name + "\nLinha: " + linha + "\nValor: " + valor);
-                            }
+                        try
+                        {
+                           objPropertyInfo.SetValue(registro, StringToDouble(valor));
+
+                        }
+                        catch (Exception ex)
+                        {
+                            System.Windows.Forms.MessageBox.Show(ex.Message + "\nNome: " + tipo.Name + "\nProriedade: " + objPropertyInfo.PropertyType.Name + "\nLinha: " + linha + "\nValor: " + valor);
+                        }
                             break;
                         case "Int32":
-                            try
-                            {
-                                objPropertyInfo.SetValue(registro, StringToInt(valor));
-                            }
-                            catch (Exception ex)
-                            {
-                                System.Windows.Forms.MessageBox.Show(ex.Message + "\nNome: " + tipo.Name + "\nProriedade: " + objPropertyInfo.PropertyType.Name + "\nLinha: " + linha + "\nValor: " + valor);
-                            }
+                        try
+                        {
+                            objPropertyInfo.SetValue(registro, StringToInt(valor));
+                        }
+                        catch (Exception ex)
+                        {
+                            System.Windows.Forms.MessageBox.Show(ex.Message + "\nNome: " + tipo.Name + "\nProriedade: " + objPropertyInfo.PropertyType.Name + "\nLinha: " + linha + "\nValor: " + valor);
+                        }
                             break;
                         default:
+                        try { 
                             if (objPropertyInfo.Name.Substring(4, 2).Equals("DT") && !valor.Equals(""))
                                 objPropertyInfo.SetValue(registro, StringToStringDateFormatExcel(valor));
                             else
                                 objPropertyInfo.SetValue(registro, valor);
-                            break;
+                        }
+                        catch (Exception ex)
+                        {
+                            System.Windows.Forms.MessageBox.Show(ex.Message + "\nNome: " + tipo.Name + "\nProriedade: " + objPropertyInfo.PropertyType.Name + "\nLinha: " + linha + "\nValor: " + valor);
+                        }
+                        break;
                     }
                 }
                 return registro;
             }
 
-            public XLWorkbook GetRegistroExcel(XLWorkbook workBook, object registro)
+        private double StringToDoubleFormat(string valor, string formatacao)
+        {
+            if (valor.Equals(""))
+            {
+                return 0.00;
+            } else if (valor.Length <= 2)
+            {
+                return double.Parse(valor);
+            }
+            else
+            {
+                valor = valor.Replace(".", "").Replace(",", "");
+                valor = InvertString(valor);
+                int index = 2;
+                if (!formatacao.Equals(""))
+                {
+                    string[] array = formatacao.Split('.');
+                    index = array[array.Length - 1].Length;
+                }
+                valor = InvertString(valor.Insert(index, ","));
+                return double.Parse(valor);
+            }
+        }
+
+        public XLWorkbook GetRegistroExcel(XLWorkbook workBook, object registro)
             {
 
                 IDictionary<int, string> listaProriedades = PropriedadeRegistro(registro);
@@ -181,7 +223,7 @@ namespace EvoluzeSped.Controller.Blocos
 
                 foreach (var obj in objPropertyInfo.CustomAttributes.ToList())
                 {
-                    if (obj.AttributeType.Name.Equals("FormatoField"))
+                    if (obj.AttributeType.Name.Equals("LabelField"))
                     {
                         valor = obj.ConstructorArguments[0].Value.ToString();
                         break;
@@ -224,7 +266,7 @@ namespace EvoluzeSped.Controller.Blocos
             {
                 if (!valor.Equals(""))
                 {
-                    valor = valor.Replace(".", "").Replace(",", ".");
+                    valor = valor.Replace(".", "");
                     return double.Parse(valor);
                 }
                 else
@@ -238,12 +280,21 @@ namespace EvoluzeSped.Controller.Blocos
                 if (!valor.Equals(""))
                 {
                     valor = valor.Replace(".", "").Replace(",", ".");
+                    
                     return int.Parse(valor);
-            }
+                }
                 else
                 {
                     return 0;
                 }
+            }
+
+            public string InvertString(string arquivoOrigem)
+            {
+                char[] arrChar = arquivoOrigem.ToCharArray();
+                Array.Reverse(arrChar);
+                string invertida = new String(arrChar);
+                return invertida;
             }
 
             public static string IntToString(int valor = 0)

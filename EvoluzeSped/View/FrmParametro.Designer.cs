@@ -34,46 +34,56 @@
             this.tabSpedEFD_ICMS_IPI = new System.Windows.Forms.TabPage();
             this.tabBlocos = new System.Windows.Forms.TabControl();
             this.tabBloco0 = new System.Windows.Forms.TabPage();
-            this.ckLimpar = new System.Windows.Forms.CheckBox();
             this.grid_EFD_ICMS_IP_Bloco0 = new System.Windows.Forms.DataGridView();
-            this.Registro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabBloco1 = new System.Windows.Forms.TabPage();
             this.grid_EFD_ICMS_IP_Bloco1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabBlocoB = new System.Windows.Forms.TabPage();
             this.grid_EFD_ICMS_IP_BlocoB = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabBlocoC = new System.Windows.Forms.TabPage();
             this.grid_EFD_ICMS_IP_BlocoC = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabBlocoD = new System.Windows.Forms.TabPage();
             this.grid_EFD_ICMS_IP_BlocoD = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabBlocoE = new System.Windows.Forms.TabPage();
             this.grid_EFD_ICMS_IP_BlocoE = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabBlocoG = new System.Windows.Forms.TabPage();
             this.grid_EFD_ICMS_IP_BlocoG = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabBlocoH = new System.Windows.Forms.TabPage();
             this.grid_EFD_ICMS_IP_BlocoH = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabBlocoK = new System.Windows.Forms.TabPage();
             this.grid_EFD_ICMS_IP_BlocoK = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabBloco9 = new System.Windows.Forms.TabPage();
             this.grid_EFD_ICMS_IP_Bloco9 = new System.Windows.Forms.DataGridView();
+            this.ckLimpar = new System.Windows.Forms.CheckBox();
+            this.Registro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabSped.SuspendLayout();
             this.tabSpedEFD_ICMS_IPI.SuspendLayout();
             this.tabBlocos.SuspendLayout();
@@ -165,18 +175,6 @@
             this.tabBloco0.Text = "Bloco 0";
             this.tabBloco0.UseVisualStyleBackColor = true;
             // 
-            // ckLimpar
-            // 
-            this.ckLimpar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ckLimpar.AutoSize = true;
-            this.ckLimpar.Location = new System.Drawing.Point(7, 513);
-            this.ckLimpar.Name = "ckLimpar";
-            this.ckLimpar.Size = new System.Drawing.Size(112, 17);
-            this.ckLimpar.TabIndex = 1;
-            this.ckLimpar.Text = "Selecionar/Limpar";
-            this.ckLimpar.UseVisualStyleBackColor = true;
-            this.ckLimpar.CheckedChanged += new System.EventHandler(this.ckLimpar_CheckedChanged);
-            // 
             // grid_EFD_ICMS_IP_Bloco0
             // 
             this.grid_EFD_ICMS_IP_Bloco0.AllowUserToAddRows = false;
@@ -186,21 +184,12 @@
             this.grid_EFD_ICMS_IP_Bloco0.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_EFD_ICMS_IP_Bloco0.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Registro,
-            this.Valor});
+            this.Valor,
+            this.Descricao});
             this.grid_EFD_ICMS_IP_Bloco0.Location = new System.Drawing.Point(0, 0);
             this.grid_EFD_ICMS_IP_Bloco0.Name = "grid_EFD_ICMS_IP_Bloco0";
             this.grid_EFD_ICMS_IP_Bloco0.Size = new System.Drawing.Size(738, 437);
             this.grid_EFD_ICMS_IP_Bloco0.TabIndex = 0;
-            // 
-            // Registro
-            // 
-            this.Registro.HeaderText = "Registro";
-            this.Registro.Name = "Registro";
-            // 
-            // Valor
-            // 
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
             // 
             // tabBloco1
             // 
@@ -222,21 +211,12 @@
             this.grid_EFD_ICMS_IP_Bloco1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_EFD_ICMS_IP_Bloco1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewCheckBoxColumn1});
+            this.dataGridViewCheckBoxColumn1,
+            this.Column1});
             this.grid_EFD_ICMS_IP_Bloco1.Location = new System.Drawing.Point(0, 0);
             this.grid_EFD_ICMS_IP_Bloco1.Name = "grid_EFD_ICMS_IP_Bloco1";
             this.grid_EFD_ICMS_IP_Bloco1.Size = new System.Drawing.Size(735, 437);
             this.grid_EFD_ICMS_IP_Bloco1.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Registro";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Valor";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             // 
             // tabBlocoB
             // 
@@ -258,21 +238,12 @@
             this.grid_EFD_ICMS_IP_BlocoB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_EFD_ICMS_IP_BlocoB.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewCheckBoxColumn2});
+            this.dataGridViewCheckBoxColumn2,
+            this.Column2});
             this.grid_EFD_ICMS_IP_BlocoB.Location = new System.Drawing.Point(0, 0);
             this.grid_EFD_ICMS_IP_BlocoB.Name = "grid_EFD_ICMS_IP_BlocoB";
             this.grid_EFD_ICMS_IP_BlocoB.Size = new System.Drawing.Size(738, 437);
             this.grid_EFD_ICMS_IP_BlocoB.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Registro";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewCheckBoxColumn2
-            // 
-            this.dataGridViewCheckBoxColumn2.HeaderText = "Valor";
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
             // 
             // tabBlocoC
             // 
@@ -294,21 +265,12 @@
             this.grid_EFD_ICMS_IP_BlocoC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_EFD_ICMS_IP_BlocoC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3,
-            this.dataGridViewCheckBoxColumn3});
+            this.dataGridViewCheckBoxColumn3,
+            this.Column3});
             this.grid_EFD_ICMS_IP_BlocoC.Location = new System.Drawing.Point(0, 0);
             this.grid_EFD_ICMS_IP_BlocoC.Name = "grid_EFD_ICMS_IP_BlocoC";
             this.grid_EFD_ICMS_IP_BlocoC.Size = new System.Drawing.Size(738, 437);
             this.grid_EFD_ICMS_IP_BlocoC.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Registro";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewCheckBoxColumn3
-            // 
-            this.dataGridViewCheckBoxColumn3.HeaderText = "Valor";
-            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
             // 
             // tabBlocoD
             // 
@@ -330,21 +292,12 @@
             this.grid_EFD_ICMS_IP_BlocoD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_EFD_ICMS_IP_BlocoD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewCheckBoxColumn4});
+            this.dataGridViewCheckBoxColumn4,
+            this.Column4});
             this.grid_EFD_ICMS_IP_BlocoD.Location = new System.Drawing.Point(0, 0);
             this.grid_EFD_ICMS_IP_BlocoD.Name = "grid_EFD_ICMS_IP_BlocoD";
             this.grid_EFD_ICMS_IP_BlocoD.Size = new System.Drawing.Size(738, 437);
             this.grid_EFD_ICMS_IP_BlocoD.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Registro";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewCheckBoxColumn4
-            // 
-            this.dataGridViewCheckBoxColumn4.HeaderText = "Valor";
-            this.dataGridViewCheckBoxColumn4.Name = "dataGridViewCheckBoxColumn4";
             // 
             // tabBlocoE
             // 
@@ -366,21 +319,12 @@
             this.grid_EFD_ICMS_IP_BlocoE.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_EFD_ICMS_IP_BlocoE.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
-            this.dataGridViewCheckBoxColumn5});
+            this.dataGridViewCheckBoxColumn5,
+            this.Column5});
             this.grid_EFD_ICMS_IP_BlocoE.Location = new System.Drawing.Point(0, 1);
             this.grid_EFD_ICMS_IP_BlocoE.Name = "grid_EFD_ICMS_IP_BlocoE";
             this.grid_EFD_ICMS_IP_BlocoE.Size = new System.Drawing.Size(738, 437);
             this.grid_EFD_ICMS_IP_BlocoE.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Registro";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewCheckBoxColumn5
-            // 
-            this.dataGridViewCheckBoxColumn5.HeaderText = "Valor";
-            this.dataGridViewCheckBoxColumn5.Name = "dataGridViewCheckBoxColumn5";
             // 
             // tabBlocoG
             // 
@@ -402,21 +346,12 @@
             this.grid_EFD_ICMS_IP_BlocoG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_EFD_ICMS_IP_BlocoG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn6,
-            this.dataGridViewCheckBoxColumn6});
+            this.dataGridViewCheckBoxColumn6,
+            this.Column6});
             this.grid_EFD_ICMS_IP_BlocoG.Location = new System.Drawing.Point(0, 0);
             this.grid_EFD_ICMS_IP_BlocoG.Name = "grid_EFD_ICMS_IP_BlocoG";
             this.grid_EFD_ICMS_IP_BlocoG.Size = new System.Drawing.Size(738, 437);
             this.grid_EFD_ICMS_IP_BlocoG.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Registro";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewCheckBoxColumn6
-            // 
-            this.dataGridViewCheckBoxColumn6.HeaderText = "Valor";
-            this.dataGridViewCheckBoxColumn6.Name = "dataGridViewCheckBoxColumn6";
             // 
             // tabBlocoH
             // 
@@ -438,21 +373,12 @@
             this.grid_EFD_ICMS_IP_BlocoH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_EFD_ICMS_IP_BlocoH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn7,
-            this.dataGridViewCheckBoxColumn7});
+            this.dataGridViewCheckBoxColumn7,
+            this.Column7});
             this.grid_EFD_ICMS_IP_BlocoH.Location = new System.Drawing.Point(0, 0);
             this.grid_EFD_ICMS_IP_BlocoH.Name = "grid_EFD_ICMS_IP_BlocoH";
             this.grid_EFD_ICMS_IP_BlocoH.Size = new System.Drawing.Size(738, 437);
             this.grid_EFD_ICMS_IP_BlocoH.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Registro";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewCheckBoxColumn7
-            // 
-            this.dataGridViewCheckBoxColumn7.HeaderText = "Valor";
-            this.dataGridViewCheckBoxColumn7.Name = "dataGridViewCheckBoxColumn7";
             // 
             // tabBlocoK
             // 
@@ -474,21 +400,12 @@
             this.grid_EFD_ICMS_IP_BlocoK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_EFD_ICMS_IP_BlocoK.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn8,
-            this.dataGridViewCheckBoxColumn8});
+            this.dataGridViewCheckBoxColumn8,
+            this.Column8});
             this.grid_EFD_ICMS_IP_BlocoK.Location = new System.Drawing.Point(0, 0);
             this.grid_EFD_ICMS_IP_BlocoK.Name = "grid_EFD_ICMS_IP_BlocoK";
             this.grid_EFD_ICMS_IP_BlocoK.Size = new System.Drawing.Size(738, 437);
             this.grid_EFD_ICMS_IP_BlocoK.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "Registro";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewCheckBoxColumn8
-            // 
-            this.dataGridViewCheckBoxColumn8.HeaderText = "Valor";
-            this.dataGridViewCheckBoxColumn8.Name = "dataGridViewCheckBoxColumn8";
             // 
             // tabBloco9
             // 
@@ -510,11 +427,177 @@
             this.grid_EFD_ICMS_IP_Bloco9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_EFD_ICMS_IP_Bloco9.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn9,
-            this.dataGridViewCheckBoxColumn9});
+            this.dataGridViewCheckBoxColumn9,
+            this.Column9});
             this.grid_EFD_ICMS_IP_Bloco9.Location = new System.Drawing.Point(0, 0);
             this.grid_EFD_ICMS_IP_Bloco9.Name = "grid_EFD_ICMS_IP_Bloco9";
             this.grid_EFD_ICMS_IP_Bloco9.Size = new System.Drawing.Size(738, 437);
             this.grid_EFD_ICMS_IP_Bloco9.TabIndex = 1;
+            // 
+            // ckLimpar
+            // 
+            this.ckLimpar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ckLimpar.AutoSize = true;
+            this.ckLimpar.Location = new System.Drawing.Point(7, 513);
+            this.ckLimpar.Name = "ckLimpar";
+            this.ckLimpar.Size = new System.Drawing.Size(112, 17);
+            this.ckLimpar.TabIndex = 1;
+            this.ckLimpar.Text = "Selecionar/Limpar";
+            this.ckLimpar.UseVisualStyleBackColor = true;
+            this.ckLimpar.CheckedChanged += new System.EventHandler(this.ckLimpar_CheckedChanged);
+            // 
+            // Registro
+            // 
+            this.Registro.HeaderText = "Registro";
+            this.Registro.Name = "Registro";
+            // 
+            // Valor
+            // 
+            this.Valor.HeaderText = "Valor";
+            this.Valor.Name = "Valor";
+            // 
+            // Descricao
+            // 
+            this.Descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Descricao.HeaderText = "Descricao";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Registro";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewCheckBoxColumn5
+            // 
+            this.dataGridViewCheckBoxColumn5.HeaderText = "Valor";
+            this.dataGridViewCheckBoxColumn5.Name = "dataGridViewCheckBoxColumn5";
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.HeaderText = "Descricao";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Registro";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewCheckBoxColumn4
+            // 
+            this.dataGridViewCheckBoxColumn4.HeaderText = "Valor";
+            this.dataGridViewCheckBoxColumn4.Name = "dataGridViewCheckBoxColumn4";
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.HeaderText = "Descricao";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Registro";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewCheckBoxColumn3
+            // 
+            this.dataGridViewCheckBoxColumn3.HeaderText = "Valor";
+            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.HeaderText = "Descricao";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Registro";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewCheckBoxColumn2
+            // 
+            this.dataGridViewCheckBoxColumn2.HeaderText = "Valor";
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "Descricao";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Registro";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Valor";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.HeaderText = "Descricao";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Registro";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewCheckBoxColumn6
+            // 
+            this.dataGridViewCheckBoxColumn6.HeaderText = "Valor";
+            this.dataGridViewCheckBoxColumn6.Name = "dataGridViewCheckBoxColumn6";
+            // 
+            // Column6
+            // 
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column6.HeaderText = "Descricao";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Registro";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewCheckBoxColumn7
+            // 
+            this.dataGridViewCheckBoxColumn7.HeaderText = "Valor";
+            this.dataGridViewCheckBoxColumn7.Name = "dataGridViewCheckBoxColumn7";
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column7.HeaderText = "Descricao";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Registro";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewCheckBoxColumn8
+            // 
+            this.dataGridViewCheckBoxColumn8.HeaderText = "Valor";
+            this.dataGridViewCheckBoxColumn8.Name = "dataGridViewCheckBoxColumn8";
+            // 
+            // Column8
+            // 
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column8.HeaderText = "Descricao";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -525,6 +608,13 @@
             // 
             this.dataGridViewCheckBoxColumn9.HeaderText = "Valor";
             this.dataGridViewCheckBoxColumn9.Name = "dataGridViewCheckBoxColumn9";
+            // 
+            // Column9
+            // 
+            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column9.HeaderText = "Descricao";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
             // 
             // FrmParametro
             // 
@@ -576,42 +666,52 @@
         private System.Windows.Forms.DataGridView grid_EFD_ICMS_IP_Bloco0;
         private System.Windows.Forms.TabPage tabBloco1;
         private System.Windows.Forms.TabPage tabBlocoB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Registro;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Valor;
         private System.Windows.Forms.DataGridView grid_EFD_ICMS_IP_Bloco1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridView grid_EFD_ICMS_IP_BlocoB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
         private System.Windows.Forms.TabPage tabBlocoC;
         private System.Windows.Forms.DataGridView grid_EFD_ICMS_IP_BlocoC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
         private System.Windows.Forms.TabPage tabBlocoD;
         private System.Windows.Forms.DataGridView grid_EFD_ICMS_IP_BlocoD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn4;
         private System.Windows.Forms.TabPage tabBlocoE;
         private System.Windows.Forms.DataGridView grid_EFD_ICMS_IP_BlocoE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn5;
         private System.Windows.Forms.TabPage tabBlocoG;
         private System.Windows.Forms.DataGridView grid_EFD_ICMS_IP_BlocoG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn6;
         private System.Windows.Forms.TabPage tabBlocoH;
         private System.Windows.Forms.DataGridView grid_EFD_ICMS_IP_BlocoH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn7;
         private System.Windows.Forms.TabPage tabBlocoK;
         private System.Windows.Forms.DataGridView grid_EFD_ICMS_IP_BlocoK;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn8;
         private System.Windows.Forms.TabPage tabBloco9;
         private System.Windows.Forms.DataGridView grid_EFD_ICMS_IP_Bloco9;
+        private System.Windows.Forms.CheckBox ckLimpar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Registro;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn9;
-        private System.Windows.Forms.CheckBox ckLimpar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
     }
 }

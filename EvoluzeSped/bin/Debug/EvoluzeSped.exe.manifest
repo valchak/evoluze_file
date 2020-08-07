@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="EvoluzeSped.exe" version="1.20.08.7" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="EvoluzeSped.exe" version="1.20.08.10" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="evoluze_logo_HqE_icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="EvoluzeSped" version="1.20.8.7" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="EvoluzeSped" version="1.20.8.10" language="neutral" processorArchitecture="msil" />
     <commandLine file="EvoluzeSped.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -79,26 +79,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EvoluzeFile_S_P_E_D.dll" size="505344">
-      <assemblyIdentity name="EvoluzeFile_S_P_E_D" version="1.1.2.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EvoluzeFile_S_P_E_D.dll" size="527360">
+      <assemblyIdentity name="EvoluzeFile_S_P_E_D" version="1.1.5.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ux+ASiPV8DG9izBvLicvNPyvhZicYx+KJHZfO4dIfSQ=</dsig:DigestValue>
+        <dsig:DigestValue>/uoZShOFdr7A/hm5yxZTl/PKZk/DK8RlDfctYFtBeUw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EvoluzeSped.exe" size="1595376">
-      <assemblyIdentity name="EvoluzeSped" version="1.20.8.7" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EvoluzeSped.exe" size="1596912">
+      <assemblyIdentity name="EvoluzeSped" version="1.20.8.10" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bzdMZuibXsw17BiebArh1Gk8I7jk7n8vPX4MsLLy/F0=</dsig:DigestValue>
+        <dsig:DigestValue>WuxmBlWFdz/7Z9OrFzZef1nguiJASBZYaQpSNQf4GA4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
